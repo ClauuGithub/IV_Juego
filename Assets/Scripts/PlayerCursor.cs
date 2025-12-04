@@ -11,22 +11,24 @@ public class PlayerCursor : MonoBehaviour
 
     void Awake()
     {
-        // Singleton
+        // Usa Singleton
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
     void Start()
     {
-        // Cursor por defecto al inicio
         Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
     }
 
     void Update()
     {
-        // Obtener posición del ratón en el mundo
+        //Obtiene la posición del ratón en el mundo
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector3 screenPos = new Vector3(mousePos.x, mousePos.y, 10f); // Z = distancia cámara ? plano 0
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+        worldPos.z = 0;
+        transform.position = worldPos;
 
         // Raycast para detectar objetos con collider
         RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
@@ -40,7 +42,7 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    // Métodos públicos para que otros scripts puedan cambiar el cursor manualmente
+    // Métodos públicos para que otros scripts puedan cambiar el cursor 
     public void SetDefault() => Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
     public void SetHover() => Cursor.SetCursor(cursorHover, hotSpot, CursorMode.Auto);
 }
