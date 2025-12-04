@@ -23,9 +23,8 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
-        //Obtiene la posición del ratón en el mundo
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector3 screenPos = new Vector3(mousePos.x, mousePos.y, 10f); // Z = distancia cámara ? plano 0
+        Vector3 screenPos = new Vector3(mousePos.x, mousePos.y, 10f); // Z = distancia cámara, plano 0
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
         worldPos.z = 0;
         transform.position = worldPos;
