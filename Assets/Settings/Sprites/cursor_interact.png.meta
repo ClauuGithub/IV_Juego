@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: -7242451192980313631
     second: cursor_interact_0
+  - first:
+      213: -5794558892556168828
+    second: cursor_interact_1
+  - first:
+      213: -5764590201218394833
+    second: cursor_interact_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,7 +125,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 1024
-        height: 1536
+        height: 1532
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +140,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cursor_interact_1
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 11
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481db1b5367959fa0800000000000000
+      internalID: -5794558892556168828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_interact_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f251eac01cf0000b0800000000000000
+      internalID: -5764590201218394833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +199,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       cursor_interact_0: -7242451192980313631
+      cursor_interact_1: -5794558892556168828
+      cursor_interact_2: -5764590201218394833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
