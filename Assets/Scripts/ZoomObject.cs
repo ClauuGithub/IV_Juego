@@ -1,10 +1,10 @@
 using UnityEngine;
 
-/*public class InteractiveObject : MonoBehaviour
+/*public class ZoomObject : MonoBehaviour
 {
     void OnMouseEnter()
     {
-        PlayerCursor.Instance.SetHover();
+        PlayerCursor.Instance.SetZoom();
     }
 
     void OnMouseExit()

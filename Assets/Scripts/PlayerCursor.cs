@@ -7,6 +7,7 @@ public class PlayerCursor : MonoBehaviour
 
     public Texture2D cursorDefault;
     public Texture2D cursorHover;
+    public Texture2D cursorZoom;
     private Vector2 hotSpot = Vector2.zero;
 
     void Awake()
@@ -23,6 +24,7 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
+        // Posicion en el mundo
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Vector3 screenPos = new Vector3(mousePos.x, mousePos.y, 10f); // Z = distancia cámara, plano 0
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
@@ -33,7 +35,18 @@ public class PlayerCursor : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
         if (hit.collider != null)
         {
-            Cursor.SetCursor(cursorHover, hotSpot, CursorMode.Auto);
+            switch (hit.collider.tag)
+            {
+                case "Interactive":
+                    Cursor.SetCursor(cursorHover, hotSpot, CursorMode.Auto);
+                    break;
+                case "Zoom":
+                    Cursor.SetCursor(cursorZoom, hotSpot, CursorMode.Auto);
+                    break;
+                default:
+                    Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
+                    break;
+            }
         }
         else
         {
@@ -42,6 +55,7 @@ public class PlayerCursor : MonoBehaviour
     }
 
     // Métodos públicos para que otros scripts puedan cambiar el cursor 
-    public void SetDefault() => Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
+   /* public void SetDefault() => Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
     public void SetHover() => Cursor.SetCursor(cursorHover, hotSpot, CursorMode.Auto);
+    public void SetZoom() => Cursor.SetCursor(cursorZoom, hotSpot, CursorMode.Auto);*/
 }
