@@ -53,9 +53,4 @@ public class PlayerCursor : MonoBehaviour
             Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
         }
     }
-
-    // Métodos públicos para que otros scripts puedan cambiar el cursor 
-   /* public void SetDefault() => Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
-    public void SetHover() => Cursor.SetCursor(cursorHover, hotSpot, CursorMode.Auto);
-    public void SetZoom() => Cursor.SetCursor(cursorZoom, hotSpot, CursorMode.Auto);*/
 }
