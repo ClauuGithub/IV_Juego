@@ -13,7 +13,11 @@ public class PlayerCursor : MonoBehaviour
     void Awake()
     {
         // Usa Singleton
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else Destroy(gameObject);
     }
 
