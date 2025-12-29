@@ -1027,6 +1027,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4797061008008559488, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Name
       value: Interact (hand)
