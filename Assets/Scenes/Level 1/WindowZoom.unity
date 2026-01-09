@@ -308,6 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   message: {fileID: 420564321}
+  hideOtherMessage: {fileID: 931030068}
+  messageDuration: 2.5
 --- !u!1 &420564319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1062,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   message: {fileID: 420564321}
+  hideOtherMessage: {fileID: 931030068}
+  messageDuration: 2.5
 --- !u!1001 &1364598180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,6 +1163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   message: {fileID: 420564321}
+  hideOtherMessage: {fileID: 931030068}
+  messageDuration: 2.5
 --- !u!1 &1401588427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,6 +1988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   overlap: {fileID: 1698963389}
   message: {fileID: 931030068}
+  hideOtherMessage: {fileID: 420564321}
+  hideDelay: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
