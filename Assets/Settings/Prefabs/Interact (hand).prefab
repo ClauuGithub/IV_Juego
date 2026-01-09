@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3318473320432212421}
   - component: {fileID: 4797061008008559488}
-  - component: {fileID: 7411289246377523810}
+  - component: {fileID: 2697644421073718865}
   m_Layer: 0
   m_Name: Interact (hand)
   m_TagString: Interactive
@@ -91,8 +91,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7411289246377523810
-BoxCollider2D:
+--- !u!60 &2697644421073718865
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,5 +135,12 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.08, y: 0.08}
+      - {x: -0.08, y: -0.08}
+      - {x: 0.074999996, y: -0.08}
+      - {x: 0.08, y: -0.06}
+      - {x: 0.08, y: 0.07}
+      - {x: 0.055, y: 0.08}
+  m_UseDelaunayMesh: 0
