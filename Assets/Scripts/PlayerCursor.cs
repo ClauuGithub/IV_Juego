@@ -51,6 +51,14 @@ public class PlayerCursor : MonoBehaviour
                     Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
                     break;
             }
+
+            // Detectar click y avisar al objeto
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                var sceneZoom = hit.collider.GetComponent<ChangeSceneOnZoom>();
+                if (sceneZoom != null)
+                    sceneZoom.OnClick(); // aquí llamamos al método del objeto
+            }
         }
         else
         {

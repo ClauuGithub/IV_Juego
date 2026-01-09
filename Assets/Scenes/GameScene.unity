@@ -679,7 +679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 26.003906
+      value: 29.614103
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalScale.y
@@ -687,11 +687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7852
+      value: -4.5371
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8977
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -731,7 +731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167871589809662003, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Name
-      value: overlap_window
+      value: overlapWindow
       objectReference: {fileID: 0}
     - target: {fileID: 5095228211198713434, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Color.a
@@ -739,19 +739,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184462141609525079, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1450826286158134436, guid: de20948701f1d404d9021518be77cf7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2167871589809662003, guid: de20948701f1d404d9021518be77cf7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1117465490}
   m_SourcePrefab: {fileID: 100100000, guid: de20948701f1d404d9021518be77cf7c, type: 3}
 --- !u!4 &1117465488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
   m_PrefabInstance: {fileID: 1117465487}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117465489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2167871589809662003, guid: de20948701f1d404d9021518be77cf7c, type: 3}
+  m_PrefabInstance: {fileID: 1117465487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1117465490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117465489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e20097f0235dbb41b05f06a6c772307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  sceneName: WindowZoom
 --- !u!1 &1401588427
 GameObject:
   m_ObjectHideFlags: 0
