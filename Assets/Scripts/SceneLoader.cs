@@ -8,4 +8,15 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("PauseScene");
     }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void ConfigScene()
+    {
+        SceneManager.LoadScene("ConfigScene");
+    }
 }
+
