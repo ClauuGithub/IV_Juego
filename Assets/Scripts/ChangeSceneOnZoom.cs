@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeSceneOnZoom : MonoBehaviour
 {
-    public string sceneName; // se escribe manualmente en el editor
+    public string sceneName; //escribir manualmente el nombre de la escena en el editor de Unity
 
-    public void OnClick()
+    void OnMouseDown() //click para collider2D
     {
         if (!string.IsNullOrEmpty(sceneName))
         {
