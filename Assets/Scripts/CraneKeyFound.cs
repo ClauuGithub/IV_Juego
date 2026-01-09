@@ -3,7 +3,6 @@ using TMPro;
 
 public class CraneKeyFound : MonoBehaviour
 {
-    [Header("Referencias")]
     public GameObject overlap;        // sprite que tapa la llave
     public TextMeshProUGUI message;  
 
@@ -21,7 +20,7 @@ public class CraneKeyFound : MonoBehaviour
 
         if (message != null)
         {
-            message.text = "¿De dónde será esta llave?";
+            // Añadir el mensaje TMP en el editor
             message.gameObject.SetActive(true);
         }
     }
