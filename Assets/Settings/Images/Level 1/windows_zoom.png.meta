@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 09cfea125cb53be4b860fd6e9d712220
+guid: 971f1e7f4c585894c80701336e4e20d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2013384181533299356
-    second: fondo blanco_0
+      213: 4640189623031046115
+    second: windows_zoom 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondo blanco_0
+      name: windows_zoom 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 168
+        width: 1536
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c92dea8ee3af0fb10800000000000000
-      internalID: 2013384181533299356
+      spriteID: 3ef183b90e3456040800000000000000
+      internalID: 4640189623031046115
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fondo blanco_0: 2013384181533299356
+      windows_zoom 1_0: 4640189623031046115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
