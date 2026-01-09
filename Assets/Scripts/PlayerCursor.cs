@@ -51,6 +51,7 @@ public class PlayerCursor : MonoBehaviour
                     Cursor.SetCursor(cursorDefault, hotSpot, CursorMode.Auto);
                     break;
             }
+
         }
         else
         {
