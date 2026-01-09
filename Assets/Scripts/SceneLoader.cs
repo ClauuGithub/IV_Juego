@@ -13,5 +13,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
+    public void ConfigScene()
+    {
+        SceneManager.LoadScene("ConfigScene");
+    }
 }
 
