@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("CutScene");
     }
 
     public void ConfigScene()
