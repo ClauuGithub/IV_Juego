@@ -309,7 +309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   message: {fileID: 420564321}
   hideOtherMessage: {fileID: 931030068}
-  messageDuration: 2.5
 --- !u!1 &420564319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1028,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1539029826}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: PauseScene
+        m_MethodName: Level1MainScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1063,7 +1062,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   message: {fileID: 420564321}
   hideOtherMessage: {fileID: 931030068}
-  messageDuration: 2.5
 --- !u!1001 &1364598180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1164,7 +1162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   message: {fileID: 420564321}
   hideOtherMessage: {fileID: 931030068}
-  messageDuration: 2.5
 --- !u!1 &1401588427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Name
-      value: craneKey
+      value: carKey
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2697644421073718865, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
@@ -1989,7 +1986,6 @@ MonoBehaviour:
   overlap: {fileID: 1698963389}
   message: {fileID: 931030068}
   hideOtherMessage: {fileID: 420564321}
-  hideDelay: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
