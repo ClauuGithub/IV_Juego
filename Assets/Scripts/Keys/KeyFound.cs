@@ -8,7 +8,7 @@ public class KeyFound : MonoBehaviour
     public TextMeshProUGUI message;
     public TextMeshProUGUI hideOtherMessage;
 
-    private string keyId = "CarKey";                        // id que se usa en el Singleton
+    private string keyId = "CarKey";            // indicarle un id para el Singleton
     private float hideDelay = 5f;
 
     //Evita que la llave reaparezca si se vuelve a la escena
