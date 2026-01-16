@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 
 public class Mensaje : MonoBehaviour
@@ -10,9 +11,11 @@ public class Mensaje : MonoBehaviour
     public int ap;
 
     public TMP_Text Pista;
+    public TMP_Text EndMessage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        EndMessage.gameObject.SetActive(false);
         Codigo.CodigoDig += Comprobar;
         
     }
@@ -72,7 +75,16 @@ public class Mensaje : MonoBehaviour
 
         if (ac == 3)
         {
-            SceneManager.LoadScene("GameScene2");
+            StartCoroutine(EndPuzzle());
         }
+    }
+
+    IEnumerator EndPuzzle()
+    {
+        //EndMessage.text = "¡Perfecto! Ya puedo usar la escalera para subir";
+        EndMessage.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("GameScene2");
     }
 }
