@@ -1,35 +1,21 @@
-using TMPro;
 using UnityEngine;
-using System.Collections;
 
 public class CarDoor : MonoBehaviour
 {
-    public TextMeshProUGUI message;
-    public TextMeshProUGUI lockMessage;
+    //[SerializeField] private string requiredKey = "CarKey"; // La llave necesaria
 
-    private float hideDelay = 5f;
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-        if (GameStateSingleton.Instance.HasKey("CarKey"))   // indica que llave necesita
+        if (GameStateSingleton.Instance.HasKey("CarKey"))
         {
-            //OpenDoor();
-            message.gameObject.SetActive(true);
+            // La puerta se puede abrir
+            MessageManager.Instance.ShowMessage("La puerta se abre", 5f);
+            // Aquí podrías llamar a un método OpenDoor() si quieres animación
         }
         else
         {
-            //ShowLockedMessage();
-            lockMessage.gameObject.SetActive(true);
+            // Todavía no tienes la llave
+            MessageManager.Instance.ShowMessage("Está cerrada, necesito la llave", 5f);
         }
-
-        StartCoroutine(HideMessageAfterTime());
-    }
-
-    //Espera unos segundos para ocultar el mensaje y la llave
-    IEnumerator HideMessageAfterTime()
-    {
-        yield return new WaitForSeconds(hideDelay);
-
-        if (message != null)
-            message.gameObject.SetActive(false);
     }
 }
