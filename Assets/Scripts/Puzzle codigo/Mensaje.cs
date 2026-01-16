@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Mensaje : MonoBehaviour
@@ -67,6 +68,11 @@ public class Mensaje : MonoBehaviour
             {
                 Pista.text = "Nada esta bien";
             }
+        }
+
+        if (ac == 3)
+        {
+            SceneManager.LoadScene("GameScene2");
         }
     }
 }
