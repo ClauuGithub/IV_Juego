@@ -2,20 +2,16 @@ using UnityEngine;
 
 public class CarDoor : MonoBehaviour
 {
-    //[SerializeField] private string requiredKey = "CarKey"; // La llave necesaria
-
     private void OnMouseDown()
     {
-        if (GameStateSingleton.Instance.HasKey("CarKey"))
+        if (GameStateSingleton.Instance.HasKey("CarKey")) //llave obtenida
         {
-            // La puerta se puede abrir
-            MessageManager.Instance.ShowMessage("La puerta se abre", 5f);
-            // Aquí podrías llamar a un método OpenDoor() si quieres animación
+            MessageManager.Instance.ShowMessage("¡Se ha abierto", 5f);
         }
         else
         {
             // Todavía no tienes la llave
-            MessageManager.Instance.ShowMessage("Está cerrada, necesito la llave", 5f);
+            MessageManager.Instance.ShowMessage("Si dejaran las llaves puestas sería demasiado fácil", 5f);
         }
     }
 }
