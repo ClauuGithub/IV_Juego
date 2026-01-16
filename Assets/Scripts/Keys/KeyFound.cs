@@ -5,8 +5,8 @@ using System.Collections;
 public class KeyFound : MonoBehaviour
 {
     public GameObject overlap;                  // sprite que tapa la llave
-    public TextMeshProUGUI message;
-    public TextMeshProUGUI hideOtherMessage;
+    /*public TextMeshProUGUI message;
+    public TextMeshProUGUI hideOtherMessage;*/
 
     private string keyId = "CarKey";            // indicarle un id para el Singleton
     private float hideDelay = 5f;
@@ -30,23 +30,21 @@ public class KeyFound : MonoBehaviour
             overlap.SetActive(false);
 
         // Oculta y muestra los mensajes por pantalla
-        if (hideOtherMessage != null)
-            hideOtherMessage.gameObject.SetActive(false);
+        /* if (hideOtherMessage != null)
+             hideOtherMessage.gameObject.SetActive(false);
 
-        if (message != null)
-            message.gameObject.SetActive(true);
+         if (message != null)
+             message.gameObject.SetActive(true);*/
 
-        StartCoroutine(HideMessageAfterTime());
+        StartCoroutine(HideKeyAfterTime());
+
+        MessageManager.Instance.ShowMessage("¿De dónde será esta llave?", 5f);
     }
 
-    //Espera unos segundos para ocultar el mensaje y la llave
-    IEnumerator HideMessageAfterTime()
+    //Espera unos segundos para ocultar la llave
+    IEnumerator HideKeyAfterTime()
     {
         yield return new WaitForSeconds(hideDelay);
-
-        if (message != null)
-            message.gameObject.SetActive(false);
-
         gameObject.SetActive(false);
     }
 }

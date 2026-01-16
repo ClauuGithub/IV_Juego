@@ -82,7 +82,8 @@ public class Mensaje : MonoBehaviour
     IEnumerator EndPuzzle()
     {
         //EndMessage.text = "¡Perfecto! Ya puedo usar la escalera para subir";
-        EndMessage.gameObject.SetActive(true);
+        //EndMessage.gameObject.SetActive(true);
+        MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo usar la escalera para subir", 5f);
 
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("GameScene2");

@@ -6,7 +6,7 @@ public class CarDoor : MonoBehaviour
     {
         if (GameStateSingleton.Instance.HasKey("CarKey")) //llave obtenida
         {
-            MessageManager.Instance.ShowMessage("¡Se ha abierto", 5f);
+            MessageManager.Instance.ShowMessage("¡Se ha abierto!", 5f);
         }
         else
         {
