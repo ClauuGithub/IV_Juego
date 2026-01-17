@@ -853,7 +853,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1401588428}
     m_Modifications:
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalScale.x
@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.34
+      value: -0.12999988
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -885,15 +885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -909,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167871589809662003, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Name
-      value: Zoom (lens)
+      value: balcony
       objectReference: {fileID: 0}
     - target: {fileID: 5095228211198713434, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Color.a
@@ -2917,6 +2917,7 @@ Transform:
   - {fileID: 2081069167}
   - {fileID: 1117465488}
   - {fileID: 1613502420}
+  - {fileID: 1572923068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482950176
@@ -3233,6 +3234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae335ef20110fdc489c0426989d343a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BalconyUnlock
+--- !u!4 &1572923068 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 665670276604587644, guid: de20948701f1d404d9021518be77cf7c, type: 3}
+  m_PrefabInstance: {fileID: 506256555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1586111182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,4 +4116,3 @@ SceneRoots:
   - {fileID: 44588319}
   - {fileID: 1482950177}
   - {fileID: 92073177}
-  - {fileID: 506256555}
