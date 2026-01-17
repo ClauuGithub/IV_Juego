@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 //Singleton que guarda el estado entre escenas
-//Guarda la llave y el timer
+//Guarda la llave, el timer y las gemas
 public class GameStateSingleton : MonoBehaviour
 {
     // Guarda una unica instancia global para todas las escenas
@@ -42,6 +42,7 @@ public class GameStateSingleton : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);  // Asi el objeto no se destruye entre escenas
             ResetTimer();
+            ResetGems();
         }
         else Destroy(gameObject);           // Destruye si el objeto está duplicado en otra escena
     }
@@ -90,4 +91,19 @@ public class GameStateSingleton : MonoBehaviour
     {
         return keys.Contains(keyId);
     }
+
+    //Gemas
+    [Header("Contador Gemas")]
+    public int totalGems;
+
+    public void AddGems(int amount)
+    {
+        totalGems += amount;
+    }
+
+    public void ResetGems()
+    {
+        totalGems = 0;
+    }
+
 }
