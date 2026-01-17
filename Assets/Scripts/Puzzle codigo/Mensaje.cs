@@ -11,50 +11,48 @@ public class Mensaje : MonoBehaviour
     public int ap;
 
     public TMP_Text Pista;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Codigo.CodigoDig += Comprobar;
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
-    public void Comprobar(int[] cod) 
+    public void Comprobar(int[] cod)
     {
-        sol=new int[]{ 1, 2, 3 }
+        sol = new int[] { 1, 2, 3 }
         ;
         ac = 0;
-        ap= 0;
-        for (int i = 0; i < sol.Length; i++) 
+        ap = 0;
+        for (int i = 0; i < sol.Length; i++)
         {
             if (sol[i] == cod[i])
             {
                 ac++;
             }
-            else 
+            else
             {
                 for (int j = 0; j < sol.Length; j++)
                 {
-                    if (sol[i] == cod[j] )
+                    if (sol[i] == cod[j])
                     {
                         ap++;
-                        sol[i]=0;
+                        sol[i] = 0;
                     }
                 }
             }
         }
 
-        if (ac > 0) 
+        if (ac > 0)
         {
             if (ap > 0)
             {
                 Pista.text = "Has tenido " + ac + " aciertos y " + ap + " aproximaciones";
             }
-            else 
+            else
             {
                 Pista.text = "Has tenido " + ac + " aciertos";
             }
@@ -74,15 +72,8 @@ public class Mensaje : MonoBehaviour
         if (ac == 3)
         {
             GameStateSingleton.Instance.codeSolved = true;
-            //StartCoroutine(EndPuzzle());
+            MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo usar la escalera para subir", 5f);
         }
     }
-
-    IEnumerator EndPuzzle()
-    {
-        MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo usar la escalera para subir", 5f);
-
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("GameScene2");
-    }
 }
+
