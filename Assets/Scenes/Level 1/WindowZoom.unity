@@ -313,7 +313,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   timerText: {fileID: 788426657}
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 1539029826}
+  warningTime: 5
+  blinkSpeed: 0.5
+  warningColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &357781514
 PrefabInstance:
   m_ObjectHideFlags: 0
