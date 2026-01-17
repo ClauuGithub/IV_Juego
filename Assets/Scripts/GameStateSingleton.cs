@@ -17,6 +17,8 @@ public class GameStateSingleton : MonoBehaviour
 
     //Estado coche cerrado/abierto
     public bool carUnlocked = false;
+    //Estado codigo resuelto
+    public bool codeSolved = false;
 
     // TIMER
     [Header("Timer")]

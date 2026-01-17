@@ -73,7 +73,8 @@ public class Mensaje : MonoBehaviour
 
         if (ac == 3)
         {
-           //StartCoroutine(EndPuzzle());
+            GameStateSingleton.Instance.codeSolved = true;
+            //StartCoroutine(EndPuzzle());
         }
     }
 
