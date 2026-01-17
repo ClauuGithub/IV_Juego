@@ -1216,10 +1216,8 @@ RectTransform:
   - {fileID: 1056890010}
   - {fileID: 1076318854}
   - {fileID: 1539029827}
-  - {fileID: 1733398780}
   - {fileID: 696884108}
   - {fileID: 1531834750}
-  - {fileID: 926847677}
   - {fileID: 1267529266}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1331,7 +1329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d423261dccda6468d6076d38cbb0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  timerText: {fileID: 1733398778}
+  timerText: {fileID: 1531834748}
   sceneLoader: {fileID: 1539029826}
 --- !u!1 &732976767
 GameObject:
@@ -2717,6 +2715,7 @@ Transform:
   m_Children:
   - {fileID: 2081069167}
   - {fileID: 1117465488}
+  - {fileID: 1613502420}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482950176
