@@ -1202,6 +1202,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   timerText: {fileID: 1531834748}
   sceneLoader: {fileID: 1539029826}
+  warningTime: 5
+  blinkSpeed: 0.5
+  warningColor: {r: 1, g: 0.2216981, b: 0.2216981, a: 1}
 --- !u!4 &926847677
 Transform:
   m_ObjectHideFlags: 0
