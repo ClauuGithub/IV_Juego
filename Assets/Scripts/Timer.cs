@@ -1,44 +1,25 @@
-using UnityEngine;
 using TMPro;
-using UnityEngine.Rendering;
+using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class TimerUI : MonoBehaviour
 {
     [SerializeField] TMP_Text timerText;
-    [SerializeField] private float MaxTime = 120f;
     [SerializeField] SceneLoader sceneLoader;
 
-    private float timerTime;
-    private int min, sec;
-    private bool gameOverLaunched;
-
-    void Start()
-    {
-        timerTime = MaxTime;
-        gameOverLaunched = false;
-    }
     void Update()
     {
-        if (gameOverLaunched) return;
-        
-        timerTime -= Time.deltaTime;
+        if (GameStateSingleton.Instance == null) return;
 
-        if (timerTime <= 0)
+        float time = GameStateSingleton.Instance.currentTime;
+
+        int min = (int)(time / 60f);
+        int sec = (int)(time % 60f);
+
+        timerText.text = $"{min:00}:{sec:00}";
+
+        if (GameStateSingleton.Instance.gameOver)
         {
-            timerTime = 0;
-            LaunchGameOver();
+            sceneLoader.GameOverScene();
         }
-
-        min = (int)(timerTime / 60f);
-        sec = (int)(timerTime % 60f);
-
-        timerText.text = string.Format("{0:00}:{1:00}", min, sec);
-
-    }
-
-    void LaunchGameOver()
-    {
-        gameOverLaunched = true;
-        sceneLoader.GameOverScene();
     }
 }
