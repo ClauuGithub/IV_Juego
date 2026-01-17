@@ -14,14 +14,42 @@ public class GameStateSingleton : MonoBehaviour
     //Almacena las llaves recogidas
     private HashSet<string> keys = new HashSet<string>();
 
+    // TIMER
+    [Header("Timer")]
+    public float maxTime = 120f;
+    public float currentTime;
+    public bool isPaused;
+    public bool gameOver;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);  // Asi el objeto no se destruye entre escenas
+            ResetTimer();
         }
         else Destroy(gameObject);           // Destruye si el objeto está duplicado en otra escena
+    }
+
+    private void Update()
+    {
+        if (isPaused || gameOver) return;
+
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            gameOver = true;
+        }
+    }
+
+    public void ResetTimer()
+    {
+        currentTime = maxTime;
+        isPaused = false;
+        gameOver = false;
     }
 
     public void AddKey(string keyId)

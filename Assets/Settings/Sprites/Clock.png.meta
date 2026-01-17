@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 991ba65d92d565e45812fce8f0ed75c6
+guid: c2dda215b818c5f46a5b4034c443328d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -364501223616737349
-    second: Relojito guay_0
+      213: -7268525463473483431
+    second: bf46748e-a39d-43be-9506-75d7d680efaa_0
   - first:
-      213: 8557749135389391309
-    second: Relojito guay_1
+      213: -7379658452971211279
+    second: bf46748e-a39d-43be-9506-75d7d680efaa_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Relojito guay_0
+      name: bf46748e-a39d-43be-9506-75d7d680efaa_0
       rect:
         serializedVersion: 2
         x: 1529
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bbf012e711801faf0800000000000000
-      internalID: -364501223616737349
+      spriteID: 95118cce992012b90800000000000000
+      internalID: -7268525463473483431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Relojito guay_1
+      name: bf46748e-a39d-43be-9506-75d7d680efaa_1
       rect:
         serializedVersion: 2
         x: 77
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc97acb6f7b33c670800000000000000
-      internalID: 8557749135389391309
+      spriteID: 1f531f27cbf269990800000000000000
+      internalID: -7379658452971211279
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Relojito guay_0: -364501223616737349
-      Relojito guay_1: 8557749135389391309
+      bf46748e-a39d-43be-9506-75d7d680efaa_0: -7268525463473483431
+      bf46748e-a39d-43be-9506-75d7d680efaa_1: -7379658452971211279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
