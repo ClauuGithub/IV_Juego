@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 //Singleton que guarda el estado entre escenas
 //Guarda la llave y el timer
@@ -27,6 +28,13 @@ public class GameStateSingleton : MonoBehaviour
     public bool isPaused;
     public bool gameOver;
 
+    [Header("Aviso Timer")]
+    public float warningTime = 10f;
+    public bool isWarningActive; // si el timer debería parpadear
+    public float blinkTimer;
+    public Color warningColor;
+    public float blinkSpeed = 0.5f; // velocidad en segundos
+
     private void Awake()
     {
         if (Instance == null)
@@ -48,6 +56,18 @@ public class GameStateSingleton : MonoBehaviour
         {
             currentTime = 0;
             gameOver = true;
+            isWarningActive = false;
+        }
+
+        // Parpadeo de aviso
+        if (currentTime <= warningTime)
+        {
+            isWarningActive = true;
+        }
+        else
+        {
+            isWarningActive = false;
+            blinkTimer = 0f;
         }
     }
 
@@ -56,6 +76,8 @@ public class GameStateSingleton : MonoBehaviour
         currentTime = maxTime;
         isPaused = false;
         gameOver = false;
+        isWarningActive = false;
+        blinkTimer = 0f;
     }
 
     public void AddKey(string keyId)

@@ -6,13 +6,8 @@ public class TimerUI : MonoBehaviour
     [SerializeField] TMP_Text timerText;
     [SerializeField] SceneLoader sceneLoader;
 
-    // Parpadeos de aviso de poco tiempo restante
-    [SerializeField] float warningTime = 10f;
-    [SerializeField] float blinkSpeed = 0.5f;
-    [SerializeField] Color warningColor = Color.red;
 
     private Color normalColor;
-    private float blinkTimer;
 
     void Start()
     {
@@ -29,7 +24,7 @@ public class TimerUI : MonoBehaviour
 
         timerText.text = $"{min:00}:{sec:00}";
 
-        HandleWarningTime(time);
+        HandleWarningTime(GameStateSingleton.Instance);
 
         if (GameStateSingleton.Instance.gameOver)
         {
@@ -37,23 +32,28 @@ public class TimerUI : MonoBehaviour
         }
     }
 
-    void HandleWarningTime(float time)
+    void HandleWarningTime(GameStateSingleton gs)
     {
-        if (time > warningTime)
+        if (!gs.isWarningActive)
         {
             timerText.color = normalColor;
+            timerText.alpha(1f);
             return;
         }
 
-        blinkTimer += Time.unscaledDeltaTime; // aunque el juego esté pausado se sigue mostrando el parpadeo
+        // Parpadeo usando alpha
+        float alpha = Mathf.PingPong(Time.unscaledTime / gs.blinkSpeed, 1f);
+        timerText.color = new Color(gs.warningColor.r, gs.warningColor.g, gs.warningColor.b, alpha);
+    }
 
-        if (blinkTimer >= blinkSpeed)
-        {
-            blinkTimer = 0f;
-            timerText.enabled = !timerText.enabled;
+}
 
-        }
-
-        timerText.color = warningColor;
+public static class TMP_TextExtensions
+{
+    public static void alpha(this TMP_Text text, float a)
+    {
+        Color c = text.color;
+        c.a = a;
+        text.color = c;
     }
 }
