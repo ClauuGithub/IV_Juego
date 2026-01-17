@@ -10,6 +10,7 @@ public class MessageManager : MonoBehaviour
     public static MessageManager Instance;
 
     public TextMeshProUGUI messageText; //campo general para mensajes, será siempre el mismo
+    public GameObject background;
     public float typeSpeed = 0.03f;
 
     private Coroutine typingRoutine;
@@ -30,6 +31,8 @@ public class MessageManager : MonoBehaviour
         if (typingRoutine != null)
             StopCoroutine(typingRoutine);
 
+        background.SetActive(true);
+
         typingRoutine = StartCoroutine(TypeAndHide(text, duration));
     }
 
@@ -45,6 +48,7 @@ public class MessageManager : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
         messageText.text = "";
+        background.SetActive(false);
     }
 
     //Detiene los mensajes cuando se cambia de escena para que no continúen en la siguiente
@@ -56,6 +60,7 @@ public class MessageManager : MonoBehaviour
             typingRoutine = null;
         }
         messageText.text = "";
+        background.SetActive(false);
     }
 
     private void OnDestroy()

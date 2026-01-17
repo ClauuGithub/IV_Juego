@@ -72,7 +72,7 @@ public class Mensaje : MonoBehaviour
         if (ac == 3)
         {
             GameStateSingleton.Instance.codeSolved = true;
-            MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo usar la escalera para subir", 5f);
+            MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón", 5f);
         }
     }
 }
