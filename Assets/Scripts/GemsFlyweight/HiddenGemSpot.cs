@@ -67,7 +67,7 @@ public class HiddenGemSpot : MonoBehaviour
 
         gem.Initialize(flyweight);
 
-        GemsCounter.Instance.AddGem(flyweight.value);
+        GameStateSingleton.Instance.AddGems(flyweight.value);
 
         if (flyweight.pickupSound != null)
         {

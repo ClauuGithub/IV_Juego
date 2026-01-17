@@ -3,33 +3,13 @@ using TMPro;
 
 public class GemsCounter : MonoBehaviour
 {
-    public static GemsCounter Instance;
-    public int totalGems=0;
     public TMP_Text counterText;
 
-    void Awake()
+    void Update()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-    }
-    void Start()
-    {
-        UpdateUI();
-    }
-    public void AddGem(int value)
-    {
-        totalGems += value;
-        UpdateUI();
-    }
-
-    void UpdateUI()
-    {
-        if (counterText != null)
+        if (GameStateSingleton.Instance != null)
         {
-            counterText.text = "Gemas: " + totalGems;
+            counterText.text = "Gemas: " + GameStateSingleton.Instance.totalGems;
         }
     }
 }
-
