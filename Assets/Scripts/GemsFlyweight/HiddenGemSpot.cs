@@ -7,6 +7,7 @@ public class HiddenGemSpot : MonoBehaviour
     public AudioClip gemSound;
     public int gemValue = 10;
     public Camera mainCamera;
+    public GemType gemType = GemType.Green;
 
     private bool found = false;
     private GemsFactoryFlyweight factory;
@@ -58,7 +59,7 @@ public class HiddenGemSpot : MonoBehaviour
         Gems gem = gemObj.GetComponent<Gems>();
 
         GemsFlyweight flyweight = factory.GetFlyweight(
-            GemType.Green,
+            gemType,
             gemSprite,
             gemSound,
             gemValue
