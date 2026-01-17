@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeSceneOnZoom : MonoBehaviour
+public class ChangeSceneOnClick : MonoBehaviour
 {
     public string sceneName; //escribir manualmente el nombre de la escena en el editor de Unity
 

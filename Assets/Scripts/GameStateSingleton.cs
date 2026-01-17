@@ -4,7 +4,8 @@ using Mono.Cecil.Cil;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-//Singleton que guarda el estado entre escenas, en este caso, detecta cuando se ha recogido una llave, para poder usarla en otra escena
+//Singleton que guarda el estado entre escenas
+//Guarda la llave y el timer
 public class GameStateSingleton : MonoBehaviour
 {
     // Guarda una unica instancia global para todas las escenas
@@ -14,6 +15,11 @@ public class GameStateSingleton : MonoBehaviour
 
     //Almacena las llaves recogidas
     private HashSet<string> keys = new HashSet<string>();
+
+    //Estado coche cerrado/abierto
+    public bool carUnlocked = false;
+    //Estado codigo resuelto
+    public bool codeSolved = false;
 
     // TIMER
     [Header("Timer")]
