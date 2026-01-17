@@ -24,11 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1/GameScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Level 1/PuzzeCodigo.unity
+    path: Assets/Scenes/Level 1/PuzzleCodigo.unity
     guid: 62e8a895554c9604180832a9887b0bf0
   - enabled: 1
     path: Assets/Scenes/Level 1/WindowZoom.unity
     guid: d2b965efc87ac084da00c643dac259db
+  - enabled: 1
+    path: Assets/Scenes/Level 1/BalconyPuzzle.unity
+    guid: 0e529ff343ef4344f9f24b295871f3ad
   - enabled: 1
     path: Assets/Scenes/Level 2/GameScene2.unity
     guid: bbfaa92ce2fb56645a5d071ed088bb8d

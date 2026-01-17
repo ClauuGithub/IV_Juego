@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class CarDoor : MonoBehaviour
 {
+    //cuando se hace click en la puerta del coche
     private void OnMouseDown()
     {
         if (GameStateSingleton.Instance.HasKey("CarKey")) //llave obtenida
         {
-            MessageManager.Instance.ShowMessage("¡Se ha abierto!", 5f);
+            MessageManager.Instance.ShowMessage("¡He conseguido arrancar el motor!", 5f);
+            GameStateSingleton.Instance.carUnlocked = true;  // el estado de la puerta cambia a true, desbloquea el siguiente puzzle
         }
         else
         {
