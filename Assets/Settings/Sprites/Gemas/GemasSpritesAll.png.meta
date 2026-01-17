@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 4e8d88be02633144992e18325e893f92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3926205783593162926
+    second: GemasSpritesAll_0
+  - first:
+      213: 7732525683322261812
+    second: GemasSpritesAll_1
+  - first:
+      213: 5155318197715278362
+    second: GemasSpritesAll_2
+  - first:
+      213: 3332227330389012356
+    second: GemasSpritesAll_3
+  - first:
+      213: -3224947093859819048
+    second: GemasSpritesAll_4
+  - first:
+      213: -1374918929528717600
+    second: GemasSpritesAll_5
+  - first:
+      213: -4966841094098733992
+    second: GemasSpritesAll_6
+  - first:
+      213: 6658539949983390088
+    second: GemasSpritesAll_7
+  - first:
+      213: -3143447440028222717
+    second: GemasSpritesAll_8
+  - first:
+      213: 3272353738582904772
+    second: GemasSpritesAll_9
+  - first:
+      213: -2240981788123955767
+    second: GemasSpritesAll_10
+  - first:
+      213: -5783972000394211522
+    second: GemasSpritesAll_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GemasSpritesAll_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 744
+        width: 180
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea89726bb5fac7630800000000000000
+      internalID: 3926205783593162926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 743
+        width: 191
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431120be3237f4b60800000000000000
+      internalID: 7732525683322261812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_2
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 743
+        width: 186
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a1de6369e5b8740800000000000000
+      internalID: 5155318197715278362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_3
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 743
+        width: 178
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f6fa22a137e3e20800000000000000
+      internalID: 3332227330389012356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_4
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 402
+        width: 216
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1ae0364bfae33d0800000000000000
+      internalID: -3224947093859819048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_5
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 413
+        width: 194
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eefa7aa48e4bece0800000000000000
+      internalID: -1374918929528717600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_6
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 408
+        width: 181
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854be62275c321bb0800000000000000
+      internalID: -4966841094098733992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_7
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 415
+        width: 180
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889d1895ec2e76c50800000000000000
+      internalID: 6658539949983390088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 79
+        width: 209
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30bb10f353b3064d0800000000000000
+      internalID: -3143447440028222717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_9
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 79
+        width: 215
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cfc7a7336cb96d20800000000000000
+      internalID: 3272353738582904772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_10
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 40
+        width: 191
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd70cadfee66e0e0800000000000000
+      internalID: -2240981788123955767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GemasSpritesAll_11
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 76
+        width: 178
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f82b54c143bbfa0800000000000000
+      internalID: -5783972000394211522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GemasSpritesAll_0: 3926205783593162926
+      GemasSpritesAll_1: 7732525683322261812
+      GemasSpritesAll_10: -2240981788123955767
+      GemasSpritesAll_11: -5783972000394211522
+      GemasSpritesAll_2: 5155318197715278362
+      GemasSpritesAll_3: 3332227330389012356
+      GemasSpritesAll_4: -3224947093859819048
+      GemasSpritesAll_5: -1374918929528717600
+      GemasSpritesAll_6: -4966841094098733992
+      GemasSpritesAll_7: 6658539949983390088
+      GemasSpritesAll_8: -3143447440028222717
+      GemasSpritesAll_9: 3272353738582904772
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
