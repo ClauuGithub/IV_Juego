@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999e92480fa9cb64e8f6e9cb6906b7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStateSingleton
-  maxTime: 10
+  carUnlocked: 0
+  maxTime: 100
   currentTime: 0
   isPaused: 0
   gameOver: 0
@@ -2357,18 +2358,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Name
-      value: ladder_code
+      value: ladder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1684373547}
   m_SourcePrefab: {fileID: 100100000, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
 --- !u!4 &1613502420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3318473320432212421, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
   m_PrefabInstance: {fileID: 1613502419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1684373544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+  m_PrefabInstance: {fileID: 1613502419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1684373547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684373544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4144557aeb3ea40bbd699e81beb4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1695696914
 GameObject:
   m_ObjectHideFlags: 0
