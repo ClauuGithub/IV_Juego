@@ -35,6 +35,11 @@ public class GameStateSingleton : MonoBehaviour
     public Color warningColor;
     public float blinkSpeed = 0.5f; // velocidad en segundos
 
+    //Aplicación PATRÓN DIRTY FLAG
+    [Header("Ranking")]
+    public List<float> bestTimes = new List<float>();
+    public bool rankingDirty;
+
     private void Awake()
     {
         if (Instance == null)
@@ -43,6 +48,7 @@ public class GameStateSingleton : MonoBehaviour
             DontDestroyOnLoad(gameObject);  // Asi el objeto no se destruye entre escenas
             ResetTimer();
             ResetGems();
+            LoadBestTimes();
         }
         else Destroy(gameObject);           // Destruye si el objeto está duplicado en otra escena
     }
@@ -106,4 +112,47 @@ public class GameStateSingleton : MonoBehaviour
         totalGems = 0;
     }
 
+    //RANKING DIRTY FLAG
+    public void RegisterFinishTime()
+    {
+        float newTime = currentTime;
+
+        if (bestTimes.Count < 3)
+        {
+            bestTimes.Add(newTime);
+            rankingDirty = true;
+            return;
+        }
+
+        bestTimes.Sort((a, b) => b.CompareTo(a));
+
+        if (newTime <= bestTimes[bestTimes.Count - 1])
+            return;
+
+        bestTimes.Add(newTime);
+        rankingDirty = true;
+        SaveBestTimes();
+    }
+
+    public void SaveBestTimes()
+    {
+        for (int i = 0; i < bestTimes.Count; i++)
+        {
+            PlayerPrefs.SetFloat($"BestTime{i}", bestTimes[i]);
+        }
+        PlayerPrefs.Save(); // asegura que se escriba en disco
+    }
+
+    private void LoadBestTimes()
+    {
+        bestTimes.Clear();
+        for (int i = 0; i < 3; i++)
+        {
+            if (PlayerPrefs.HasKey($"BestTime{i}"))
+            {
+                bestTimes.Add(PlayerPrefs.GetFloat($"BestTime{i}"));
+            }
+        }
+    }
 }
+
