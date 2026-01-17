@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public enum GemType
 {
-    Green
+    Green,
+    Red
 }
 
 public class GemsFactoryFlyweight
