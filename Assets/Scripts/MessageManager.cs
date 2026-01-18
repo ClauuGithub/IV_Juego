@@ -26,6 +26,14 @@ public class MessageManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    public void SetSlowSpeed(bool slow)
+    {
+        if (slow)
+            typeSpeed = 0.01f;   //velocidad más lenta (más tiempo entre letra y letra)
+        else
+            typeSpeed = 0.03f;
+    }
+
     public void ShowMessage(string text, float duration = 3f)
     {
         if (typingRoutine != null)
@@ -50,6 +58,9 @@ public class MessageManager : MonoBehaviour
         messageText.text = "";
         background.SetActive(false);
     }
+
+    
+
 
     //Detiene los mensajes cuando se cambia de escena para que no continúen en la siguiente
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

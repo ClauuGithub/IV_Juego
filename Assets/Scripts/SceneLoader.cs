@@ -8,6 +8,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("PauseScene");
     }
+    public void MenuScene()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 
     public void LoadGameScene()
     {
