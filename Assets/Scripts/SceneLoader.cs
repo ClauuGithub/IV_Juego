@@ -29,5 +29,9 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
     }
 
+    public void RankingScene()
+    {
+        SceneManager.LoadScene("RankingScene");
+    }
 }
 
