@@ -279,7 +279,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1354161635}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: Level1MainScene
+        m_MethodName: LoadGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &385630962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -946,7 +946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1031968603
 RectTransform:
   m_ObjectHideFlags: 0
