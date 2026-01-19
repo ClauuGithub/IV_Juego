@@ -15,7 +15,7 @@ public class WindowCutPuzzle : MonoBehaviour
 
     [Header("Victoria")]
     [SerializeField] private string victoryScene = "VictoryScene";
-    [SerializeField] private float victoryDelay = 4f;
+    [SerializeField] private float victoryDelay = 3f;
 
     private bool isDrawing = false;
     private List<Vector3> points = new List<Vector3>();
@@ -87,6 +87,7 @@ public class WindowCutPuzzle : MonoBehaviour
         {
             MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
             //if (!string.IsNullOrEmpty(nextScene))
+            GameStateSingleton.Instance.RegisterFinishTime();
             StartCoroutine(LoadVictoryScene());
         }
         else
