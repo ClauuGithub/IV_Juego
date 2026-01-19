@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,10 @@ public class WindowCutPuzzle : MonoBehaviour
 
     [Header("Dibujo")]
     [SerializeField] private float minDistance = 0.05f;
+
+    [Header("Victoria")]
+    [SerializeField] private string victoryScene = "VictoryScene";
+    [SerializeField] private float victoryDelay = 4f;
 
     private bool isDrawing = false;
     private List<Vector3> points = new List<Vector3>();
@@ -82,7 +87,7 @@ public class WindowCutPuzzle : MonoBehaviour
         {
             MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
             //if (!string.IsNullOrEmpty(nextScene))
-            //    SceneManager.LoadScene(nextScene);
+            StartCoroutine(LoadVictoryScene());
         }
         else
         {
@@ -90,5 +95,11 @@ public class WindowCutPuzzle : MonoBehaviour
             lineRenderer.positionCount = 0;
             points.Clear();
         }
+    }
+
+    private IEnumerator LoadVictoryScene()
+    {
+        yield return new WaitForSeconds(victoryDelay);
+        SceneManager.LoadScene(victoryScene);
     }
 }
