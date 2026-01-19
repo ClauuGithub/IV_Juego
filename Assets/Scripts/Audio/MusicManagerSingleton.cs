@@ -30,7 +30,7 @@ public class MusicManager : MonoBehaviour
     {
         string name = scene.name;
 
-        if (name.Contains("MenuScene") || name.Contains("ConfigScene") || name.Contains("PauseScene") || name.Contains("RankingScene"))
+        if (name.Contains("MenuScene") || name.Contains("ConfigScene") || name.Contains("RankingScene"))
         {
             ChangeMusic(menuMusic);
         }
