@@ -121,6 +121,7 @@ public class GameStateSingleton : MonoBehaviour
         {
             bestTimes.Add(newTime);
             rankingDirty = true;
+            SaveBestTimes();
             return;
         }
 

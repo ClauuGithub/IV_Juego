@@ -12,15 +12,15 @@ public class DialogueController : MonoBehaviour
     private int index = 0;
     private bool isTyping = false;
 
-    void Start()
+    void OnEnable()
     {
-        ShowSentence();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
     {
-        // SOLO acepta espacio cuando NO está escribiendo
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !isTyping)
+        // SOLO acepta espacio/ratón cuando NO está escribiendo
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !isTyping)
         {
             index++;
 
@@ -49,10 +49,33 @@ public class DialogueController : MonoBehaviour
         foreach (char c in sentence)
         {
             dialogueText.text += c;
-            yield return new WaitForSeconds(dialogueSpeed);
+            yield return new WaitForSecondsRealtime(dialogueSpeed);
         }
 
         isTyping = false;
+    }
+
+    void ResetDialogue()
+    {
+        StopAllCoroutines();
+        Time.timeScale = 1f;
+
+        index = 0;
+        isTyping = false;
+        dialogueText.text = "";
+
+        if (sentences != null && sentences.Length > 0)
+            ShowSentence();
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ResetDialogue();
     }
 }
 
