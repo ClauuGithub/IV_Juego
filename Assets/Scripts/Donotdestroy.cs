@@ -3,7 +3,6 @@ using UnityEngine;
 public class Donotdestroy : MonoBehaviour
 {
     public static Donotdestroy Instance;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (Instance != null && Instance !=this)

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 //Singleton que guarda el estado entre escenas
-//Guarda la llave, el timer y las gemas
+//Guarda la llave, el timer, las gemas y el ranking
 public class GameStateSingleton : MonoBehaviour
 {
     // Guarda una unica instancia global para todas las escenas
