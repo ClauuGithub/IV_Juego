@@ -153,10 +153,6 @@ public class GameStateSingleton : MonoBehaviour
             {
                 bestTimes.Add(PlayerPrefs.GetFloat($"BestTime{i}"));
             }
-            else
-            {
-                bestTimes.Add(0f); 
-            }
         }
     }
 
