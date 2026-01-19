@@ -154,5 +154,29 @@ public class GameStateSingleton : MonoBehaviour
             }
         }
     }
+
+    public void ResetGameState()
+    {
+        // --- Progreso ---
+        keys.Clear();
+        carUnlocked = false;
+        codeSolved = false;
+
+        // --- Timer ---
+        ResetTimer();
+
+        // --- Gemas ---
+        ResetGems();
+
+        // --- Estados temporales ---
+        isPaused = false;
+        gameOver = false;
+        isWarningActive = false;
+        blinkTimer = 0f;
+
+        // --- Eventos / flags ---
+        rankingDirty = false;
+    }
+
 }
 

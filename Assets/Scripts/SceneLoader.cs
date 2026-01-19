@@ -16,6 +16,7 @@ public class SceneLoader : MonoBehaviour
 
     public void MenuScene()
     {
+        GameStateSingleton.Instance.ResetGameState();
         SceneManager.LoadScene("MenuScene");
     }
 
