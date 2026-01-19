@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 //Singleton que guarda el estado entre escenas
-//Guarda la llave, el timer y las gemas
+//Guarda la llave, el timer, las gemas y el ranking
 public class GameStateSingleton : MonoBehaviour
 {
     // Guarda una unica instancia global para todas las escenas
@@ -159,5 +159,25 @@ public class GameStateSingleton : MonoBehaviour
             }
         }
     }
+
+    //Resetear el estado del juego al volver al menu (en el SceneLoader)
+    public void ResetGameState()
+    {
+        keys.Clear();
+        carUnlocked = false;
+        codeSolved = false;
+
+        ResetTimer();
+
+        ResetGems();
+
+        isPaused = false;
+        gameOver = false;
+        isWarningActive = false;
+        blinkTimer = 0f;
+
+        rankingDirty = false;
+    }
+
 }
 

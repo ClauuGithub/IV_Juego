@@ -150,11 +150,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameStateSingleton
   carUnlocked: 0
   codeSolved: 0
-  maxTime: 100
+  maxTime: 720
   currentTime: 0
   isPaused: 0
   gameOver: 0
-  warningTime: 5
+  warningTime: 30
   isWarningActive: 0
   blinkTimer: 0
   warningColor: {r: 1, g: 0.2783019, b: 0.2783019, a: 0}
@@ -916,7 +916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5095228211198713434, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Color.a
-      value: 0.5803922
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8184462141609525079, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -1343,10 +1343,11 @@ RectTransform:
   - {fileID: 1000066666}
   - {fileID: 1056890010}
   - {fileID: 1076318854}
-  - {fileID: 1539029827}
   - {fileID: 696884108}
   - {fileID: 1531834750}
   - {fileID: 1267529266}
+  - {fileID: 160469648}
+  - {fileID: 1539029827}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2595,7 +2596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5095228211198713434, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Color.a
-      value: 0.47843137
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8184462141609525079, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_IsTrigger
@@ -3390,7 +3391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4797061008008559488, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Color.a
-      value: 0.8392157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Name
@@ -4113,7 +4114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4797061008008559488, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Color.a
-      value: 0.5294118
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4797061008008559488, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
       propertyPath: m_Color.b

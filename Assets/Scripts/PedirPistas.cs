@@ -11,7 +11,6 @@ public class PedirPistas : MonoBehaviour
     public TMP_Text Pista;
 
     int f = 0;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         
@@ -33,7 +32,6 @@ public class PedirPistas : MonoBehaviour
         else { Destroy(gameObject); Debug.Log("DESTRUI"); }
     }
 
-    // Update is called once per frame
     void Update()
     {
       
