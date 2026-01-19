@@ -20,7 +20,7 @@ public class DialogueController : MonoBehaviour
     void Update()
     {
         // SOLO acepta espacio cuando NO está escribiendo
-        if (Input.GetKeyDown(KeyCode.Space) && !isTyping)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !isTyping)
         {
             index++;
 
