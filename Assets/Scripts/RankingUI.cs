@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class RankingUI : MonoBehaviour
 {
-    [SerializeField] TMP_Text[] rankingTexts; // arrastra Top1, Top2, Top3 aquí
+    [SerializeField] TMP_Text[] rankingTexts; // Top1, Top2, Top3 
 
     void OnEnable()
     {
