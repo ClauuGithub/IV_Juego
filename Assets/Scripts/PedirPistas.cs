@@ -8,6 +8,8 @@ public class PedirPistas : MonoBehaviour
 
     public string ayuda;
 
+    public bool changed = false;
+
     public TMP_Text Pista;
 
     int f = 0;
@@ -15,6 +17,7 @@ public class PedirPistas : MonoBehaviour
     {
         
         GameStateSingleton.CogerLlave += darPista;
+        Mensaje.HacerCodigo += darPista;
         Debug.Log("a");
         Pista = GameObject.Find("TextoPista").GetComponent<TMP_Text>();
         Debug.Log("b");
@@ -40,10 +43,19 @@ public class PedirPistas : MonoBehaviour
     public void darPista(int a) 
     { 
         ayuda = pistas[a];
+        changed = true;
     }
 
     public void MostrarPista() 
     {
-        Pista.text = ayuda;
+        if (changed == false)
+        {
+            MessageManager.Instance.ShowMessage(Pista.text, 5f);
+            Pista.text = ayuda;
+        }
+        else {
+            Pista.text = ayuda;
+            MessageManager.Instance.ShowMessage(Pista.text, 5f);
+        }
     }
 }

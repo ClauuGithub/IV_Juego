@@ -1,7 +1,8 @@
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 
 public class Mensaje : MonoBehaviour
@@ -9,6 +10,8 @@ public class Mensaje : MonoBehaviour
     public int[] sol;
     public int ac;
     public int ap;
+
+    public static event Action<int> HacerCodigo;
 
     public TMP_Text Pista;
     void Start()
@@ -23,7 +26,7 @@ public class Mensaje : MonoBehaviour
     }
     public void Comprobar(int[] cod)
     {
-        sol = new int[] { 1, 2, 3 }
+        sol = new int[] { 3, 0, 7}
         ;
         ac = 0;
         ap = 0;
@@ -73,6 +76,7 @@ public class Mensaje : MonoBehaviour
         {
             GameStateSingleton.Instance.codeSolved = true;
             MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón", 5f);
+            HacerCodigo?.Invoke(2);
         }
     }
 }
