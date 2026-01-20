@@ -1202,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 699490848}
     - target: {fileID: 4739177912872298071, guid: f9c19b903830ea847b5c9408c8b82628, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MenuScene
+      value: PrevMenuScene
       objectReference: {fileID: 0}
     - target: {fileID: 7608980810461479952, guid: f9c19b903830ea847b5c9408c8b82628, type: 3}
       propertyPath: m_Pivot.x
