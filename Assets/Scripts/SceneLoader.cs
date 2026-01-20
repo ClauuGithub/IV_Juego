@@ -14,6 +14,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("CutScene");
     }
 
+    public void PrevMenuScene()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
     public void MenuScene()
     {
         GameStateSingleton.Instance.ResetGameState();
@@ -39,5 +44,12 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("RankingScene");
     }
+
+    public void CreditsScene()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
+
 }
 
