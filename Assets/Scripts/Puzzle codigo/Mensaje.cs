@@ -26,7 +26,7 @@ public class Mensaje : MonoBehaviour
     }
     public void Comprobar(int[] cod)
     {
-        sol = new int[] { 1, 2, 3}
+        sol = new int[] { 3, 0, 7}
         ;
         ac = 0;
         ap = 0;
