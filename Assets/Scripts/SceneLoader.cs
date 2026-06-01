@@ -14,6 +14,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("CutScene");
     }
 
+    public void LoadGameScene2()
+    {
+        SceneManager.LoadScene("CutScene2");
+    }
+
     public void PrevMenuScene()
     {
         SceneManager.LoadScene("MenuScene");
