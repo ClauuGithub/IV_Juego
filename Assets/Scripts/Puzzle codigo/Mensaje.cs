@@ -74,7 +74,7 @@ public class Mensaje : MonoBehaviour
 
         if (ac == 3)
         {
-            GameStateSingleton.Instance.codeSolved = true;
+            GameStateSingleton.Instance.currentState = GameStateSingleton.GameState.UpperFloorOpened;
             MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón", 5f);
             HacerCodigo?.Invoke(2);
         }

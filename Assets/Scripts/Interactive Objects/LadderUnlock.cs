@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LadderUnlock : MonoBehaviour
-{ 
+{
     //cuando se hace click en la parte de abajo de la escalera
     void OnMouseDown()
     {
-        //se ha tenido que abrir el coche primero para desbloquear este puzzle
-        if (GameStateSingleton.Instance.carUnlocked)
+        // Se ha tenido que abrir el coche primero
+        if (GameStateSingleton.Instance.currentState >= GameStateSingleton.GameState.CarUnlocked)
         {
             SceneManager.LoadScene("PuzzleCodigo");
         }
@@ -15,7 +15,6 @@ public class LadderUnlock : MonoBehaviour
         {
             MessageManager.Instance.ShowMessage("La escalera no funciona si el coche no está arrancado", 5f);
         }
-
-           
     }
+
 }
