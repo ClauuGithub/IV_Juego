@@ -1,19 +1,49 @@
 using UnityEngine;
 
+// Ejemplo claro de PATTERN STATE aplicado
 public class CarDoor : MonoBehaviour
 {
-    //cuando se hace click en la puerta del coche
     private void OnMouseDown()
     {
-        if (GameStateSingleton.Instance.HasKey("CarKey")) //llave obtenida
+        switch (GameStateSingleton.Instance.currentState)
         {
-            MessageManager.Instance.ShowMessage("¡He conseguido arrancar el motor!", 5f);
-            GameStateSingleton.Instance.carUnlocked = true;  // el estado de la puerta cambia a true, desbloquea el siguiente puzzle
-        }
-        else
-        {
-            // Todavía no tienes la llave
-            MessageManager.Instance.ShowMessage("Si dejaran las llaves puestas sería demasiado fácil", 5f);
+            // =========================
+            // NO TIENES NADA
+            // =========================
+            case GameStateSingleton.GameState.SearchingKey:
+
+                MessageManager.Instance.ShowMessage(
+                    "Si dejaran las llaves puestas sería demasiado fácil",
+                    5f
+                );
+                break;
+
+            // =========================
+            // TIENES LA LLAVE PERO NO HAS USADO EL COCHE
+            // =========================
+            case GameStateSingleton.GameState.KeyFound:
+
+                MessageManager.Instance.ShowMessage(
+                    "La llave encaja en el coche...",
+                    5f
+                );
+
+                // transición de estado
+                GameStateSingleton.Instance.currentState =
+                    GameStateSingleton.GameState.CarUnlocked;
+
+                break;
+
+            // =========================
+            // YA ESTÁ DESBLOQUEADO
+            // =========================
+            case GameStateSingleton.GameState.CarUnlocked:
+
+                MessageManager.Instance.ShowMessage(
+                    "¡He conseguido arrancar el motor!",
+                    5f
+                );
+                break;
         }
     }
 }
