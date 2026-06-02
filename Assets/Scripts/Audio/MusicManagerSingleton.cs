@@ -34,7 +34,7 @@ public class MusicManager : MonoBehaviour
         {
             ChangeMusic(menuMusic);
         }
-        else if (name.Contains("CutScene"))
+        else if (name.Contains("CutScene")|| name.Contains("CutScene2"))
         {
             ChangeMusic(cutSceneMusic);
         }

@@ -12,6 +12,15 @@ public class DialogueController : MonoBehaviour
     private int index = 0;
     private bool isTyping = false;
 
+    //Cambio de scenes
+    [SerializeField] private string nextScene = "GameScene";
+
+    //Cinemática2
+    [SerializeField] private GameObject puertaAbierta;
+    [SerializeField] private GameObject puertaCerrada;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip puertaCerrandoseSound;
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -24,13 +33,25 @@ public class DialogueController : MonoBehaviour
         {
             index++;
 
+            if (index == 4)
+            {
+                if (puertaAbierta != null)
+                    puertaAbierta.SetActive(false);
+
+                if (puertaCerrada != null)
+                    puertaCerrada.SetActive(true);
+
+                if (audioSource != null && puertaCerrandoseSound != null)
+                    audioSource.PlayOneShot(puertaCerrandoseSound);
+            }
+
             if (index < sentences.Length)
             {
                 ShowSentence();
             }
             else
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadScene(nextScene);
             }
         }
     }
@@ -40,6 +61,8 @@ public class DialogueController : MonoBehaviour
         StopAllCoroutines();
         dialogueText.text = "";
         StartCoroutine(TypeSentence(sentences[index]));
+
+
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -77,5 +100,7 @@ public class DialogueController : MonoBehaviour
     {
         ResetDialogue();
     }
+
+   
 }
 
