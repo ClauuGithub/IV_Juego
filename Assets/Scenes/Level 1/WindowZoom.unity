@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverlapKeyNotFound (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2167871589809662003, guid: de20948701f1d404d9021518be77cf7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5095228211198713434, guid: de20948701f1d404d9021518be77cf7c, type: 3}
       propertyPath: m_Color.a
       value: 0

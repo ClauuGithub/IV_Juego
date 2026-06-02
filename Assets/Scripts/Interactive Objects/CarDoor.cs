@@ -19,14 +19,14 @@ public class CarDoor : MonoBehaviour
                 break;
 
             // =========================
-            // TIENES LA LLAVE PERO NO HAS USADO EL COCHE
+            // TIENES LA LLAVE Y SE USA EL COCHE
             // =========================
             case GameStateSingleton.GameState.KeyFound:
 
                 MessageManager.Instance.ShowMessage(
-                    "La llave encaja en el coche...",
-                    5f
-                );
+                   "¡He conseguido arrancar el motor!",
+                   5f
+               );
 
                 // transición de estado
                 GameStateSingleton.Instance.currentState =
@@ -39,10 +39,8 @@ public class CarDoor : MonoBehaviour
             // =========================
             case GameStateSingleton.GameState.CarUnlocked:
 
-                MessageManager.Instance.ShowMessage(
-                    "¡He conseguido arrancar el motor!",
-                    5f
-                );
+                // De momento no hay nada, lo dejo así por si hay que añadir cosas
+               
                 break;
         }
     }
