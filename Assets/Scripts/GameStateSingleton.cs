@@ -91,6 +91,8 @@ public class GameStateSingleton : MonoBehaviour
             isWarningActive = false;
             blinkTimer = 0f;
         }
+
+        //Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
     }
 
     public void ResetTimer()

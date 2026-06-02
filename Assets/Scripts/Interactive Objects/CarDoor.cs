@@ -31,6 +31,7 @@ public class CarDoor : MonoBehaviour
                 // transición de estado
                 GameStateSingleton.Instance.currentState =
                     GameStateSingleton.GameState.CarUnlocked;
+                Debug.Log("Estado actual: " + GameStateSingleton.Instance.currentState);
 
                 break;
 
