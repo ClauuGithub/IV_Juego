@@ -13,13 +13,25 @@ public class GameStateSingleton : MonoBehaviour
 
     public static event Action<int> CogerLlave;
 
+    // STATE AÑADIDO
+    public enum GameState
+    {
+        SearchingKey,
+        KeyFound,
+        CarUnlocked,
+        UpperFloorOpened,
+        GodsPuzzleSolved,
+        GameCompleted
+    }
+
     //Almacena las llaves recogidas
     private HashSet<string> keys = new HashSet<string>();
 
     //Estado coche cerrado/abierto
-    public bool carUnlocked = false;
+    /*public bool carUnlocked = false;
     //Estado codigo resuelto
     public bool codeSolved = false;
+    */
 
     // TIMER
     [Header("Timer")]
@@ -39,6 +51,9 @@ public class GameStateSingleton : MonoBehaviour
     [Header("Ranking")]
     public List<float> bestTimes = new List<float>();
     public bool rankingDirty;
+
+    //Aplicación PATRÓN STATE estado actual
+    public GameState currentState = GameState.SearchingKey;
 
     private void Awake()
     {
@@ -92,6 +107,18 @@ public class GameStateSingleton : MonoBehaviour
         keys.Add(keyId);
         CogerLlave?.Invoke(1);
     }
+
+    /*public void AddKey(string keyId)
+    {
+        keys.Add(keyId);
+
+        if (keyId == "CarKey")
+        {
+            currentState = GameState.KeyFound;
+        }
+
+        CogerLlave?.Invoke(1);
+    }*/
 
     public bool HasKey(string keyId)
     {
@@ -160,8 +187,10 @@ public class GameStateSingleton : MonoBehaviour
     public void ResetGameState()
     {
         keys.Clear();
-        carUnlocked = false;
-        codeSolved = false;
+
+        currentState = GameState.SearchingKey;
+        //carUnlocked = false;
+        //codeSolved = false;
 
         ResetTimer();
 
