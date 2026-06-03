@@ -16,6 +16,7 @@ public class GameStateSingleton : MonoBehaviour
     // STATE AÑADIDO
     public enum GameState
     {
+        MainMenu,
         SearchingKey,
         KeyFound,
         CarUnlocked,
@@ -70,7 +71,10 @@ public class GameStateSingleton : MonoBehaviour
 
     private void Update()
     {
-        if (isPaused || gameOver) return;
+        Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
+
+        // Si estamos pausados, muertos o en el MENÚ PRINCIPAL, no hacemos nada
+        if (isPaused || gameOver || currentState == GameState.MainMenu) return;
 
         currentTime -= Time.deltaTime;
 
@@ -91,8 +95,6 @@ public class GameStateSingleton : MonoBehaviour
             isWarningActive = false;
             blinkTimer = 0f;
         }
-
-        //Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
     }
 
     public void ResetTimer()
@@ -102,6 +104,7 @@ public class GameStateSingleton : MonoBehaviour
         gameOver = false;
         isWarningActive = false;
         blinkTimer = 0f;
+        Time.timeScale = 1f;
     }
 
     public void AddKey(string keyId)
@@ -190,7 +193,7 @@ public class GameStateSingleton : MonoBehaviour
     {
         keys.Clear();
 
-        currentState = GameState.SearchingKey;
+        currentState = GameState.MainMenu;
         //carUnlocked = false;
         //codeSolved = false;
 
@@ -204,6 +207,19 @@ public class GameStateSingleton : MonoBehaviour
         blinkTimer = 0f;
 
         rankingDirty = false;
+    }
+
+    public void StartGame()
+    {
+
+        Time.timeScale = 1f; 
+        // Aseguramos que todo está limpio
+        keys.Clear();
+        ResetTimer();
+        ResetGems();
+
+        // AHORA SÍ iniciamos la partida
+        currentState = GameState.SearchingKey;
     }
 
 }
