@@ -26,7 +26,7 @@ public class Mensaje : MonoBehaviour
     }
     public void Comprobar(int[] cod)
     {
-        sol = new int[] { 3, 0, 7}
+        sol = new int[] { 1, 2, 3}  // Estaba en 307
         ;
         ac = 0;
         ap = 0;
@@ -75,6 +75,8 @@ public class Mensaje : MonoBehaviour
         if (ac == 3)
         {
             GameStateSingleton.Instance.currentState = GameStateSingleton.GameState.UpperFloorOpened;
+            Debug.Log("Estado actual: " + GameStateSingleton.Instance.currentState);
+
             MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón", 5f);
             HacerCodigo?.Invoke(2);
         }

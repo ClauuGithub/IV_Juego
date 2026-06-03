@@ -28,6 +28,9 @@ public class KeyFound : MonoBehaviour
         GameStateSingleton.Instance.currentState =
             GameStateSingleton.GameState.KeyFound;
 
+        Debug.Log("Estado actual: " +
+    GameStateSingleton.Instance.currentState);
+
         //Desactiva el sprite de encima de la llave
         if (overlap != null)
             overlap.SetActive(false);
