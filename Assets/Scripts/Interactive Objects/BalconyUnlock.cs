@@ -7,7 +7,7 @@ public class BalconyUnlock : MonoBehaviour
     void OnMouseDown()
     {
         //se ha tenido que resolver el código primero
-        if (GameStateSingleton.Instance.currentState >= GameStateSingleton.GameState.UpperFloorOpened)
+        if (GameStateSingleton.Instance.currentState >= GameStateSingleton.GameState.BalconyUnlocked)
         {
             SceneManager.LoadScene("BalconyPuzzle");
         }

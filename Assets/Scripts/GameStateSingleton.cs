@@ -20,7 +20,7 @@ public class GameStateSingleton : MonoBehaviour
         SearchingKey,
         KeyFound,
         CarUnlocked,
-        UpperFloorOpened,
+        BalconyUnlocked,
         GodsPuzzleSolved,
         GameCompleted
     }
