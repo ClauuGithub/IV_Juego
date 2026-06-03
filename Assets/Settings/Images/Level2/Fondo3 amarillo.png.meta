@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fa550304fa991d94eb2c079e0919401e
+guid: d95e18da6e3bd594d8db60db8920020d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5037028792665604291
-    second: Fondo3 1_0
+      213: 6163869602914047358
+    second: Fondo3 amarillo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fondo3 1_0
+      name: Fondo3 amarillo_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c08f36effe17e540800000000000000
-      internalID: 5037028792665604291
+      spriteID: e75158b0fb67a8550800000000000000
+      internalID: 6163869602914047358
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fondo3 1_0: 5037028792665604291
+      Fondo3 amarillo_0: 6163869602914047358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
