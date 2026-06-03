@@ -30,6 +30,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void Level2MainScene()
+    {
+        SceneManager.LoadScene("GameScene2");
+    }
+
     public void ConfigScene()
     {
         SceneManager.LoadScene("ConfigScene");
