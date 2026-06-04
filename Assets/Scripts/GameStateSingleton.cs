@@ -56,6 +56,9 @@ public class GameStateSingleton : MonoBehaviour
     //Aplicación PATRÓN STATE estado actual
     public GameState currentState = GameState.SearchingKey;
 
+    [Header("Puzzle Estatuas")]
+    public string carriedStatue = "";
+
     private void Awake()
     {
         if (Instance == null)
