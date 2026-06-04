@@ -582,13 +582,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 579544609}
   m_SourcePrefab: {fileID: 100100000, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
 --- !u!4 &579544607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3318473320432212421, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
   m_PrefabInstance: {fileID: 579544606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &579544608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+  m_PrefabInstance: {fileID: 579544606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &579544609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579544608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8080ada0e97cb47b216bb637f72989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Statues
+  statueID: Ares
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,13 +1347,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349637557}
   m_SourcePrefab: {fileID: 100100000, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
 --- !u!4 &1349637555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3318473320432212421, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
   m_PrefabInstance: {fileID: 1349637554}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1349637556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+  m_PrefabInstance: {fileID: 1349637554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349637557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349637556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8080ada0e97cb47b216bb637f72989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Statue
+  statueID: Poseidon
 --- !u!1 &1401588427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,13 +1713,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2011405244}
   m_SourcePrefab: {fileID: 100100000, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
 --- !u!4 &2011405242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3318473320432212421, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
   m_PrefabInstance: {fileID: 2011405241}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011405243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+  m_PrefabInstance: {fileID: 2011405241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2011405244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011405243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8080ada0e97cb47b216bb637f72989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Statue
+  statueID: Atenea
 --- !u!1 &2132365376
 GameObject:
   m_ObjectHideFlags: 0
