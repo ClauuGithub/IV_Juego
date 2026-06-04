@@ -3,11 +3,7 @@ using UnityEngine;
 public class StatuePedestal : MonoBehaviour
 {
     public string correctStatueID;
-
-    [Header("Imagen que aparecerá")]
-    public SpriteRenderer statueImageRenderer;
-
-    public Sprite statueSprite;
+    public GameObject statueVisual;
 
     private bool occupied = false;
 
@@ -17,9 +13,8 @@ public class StatuePedestal : MonoBehaviour
 
         if (GameStateSingleton.Instance.placedStatues.Contains(correctStatueID))
         {
-            statueImageRenderer.sprite = statueSprite;
-            statueImageRenderer.enabled = true;
             occupied = true;
+            statueVisual.SetActive(true);
         }
     }
 
@@ -37,9 +32,7 @@ public class StatuePedestal : MonoBehaviour
         if (carried == correctStatueID)
         {
             occupied = true;
-
-            statueImageRenderer.sprite = statueSprite;
-            statueImageRenderer.enabled = true;
+            statueVisual.SetActive(true);
 
             GameStateSingleton.Instance.placedStatues.Add(carried);
 
