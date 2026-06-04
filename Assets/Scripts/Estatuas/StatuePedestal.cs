@@ -4,7 +4,24 @@ public class StatuePedestal : MonoBehaviour
 {
     public string correctStatueID;
 
+    [Header("Imagen que aparecerá")]
+    public SpriteRenderer statueImageRenderer;
+
+    public Sprite statueSprite;
+
     private bool occupied = false;
+
+    private void Start()
+    {
+        Debug.Log(GameStateSingleton.Instance);
+
+        if (GameStateSingleton.Instance.placedStatues.Contains(correctStatueID))
+        {
+            statueImageRenderer.sprite = statueSprite;
+            statueImageRenderer.enabled = true;
+            occupied = true;
+        }
+    }
 
     private void OnMouseDown()
     {
@@ -16,18 +33,31 @@ public class StatuePedestal : MonoBehaviour
         if (string.IsNullOrEmpty(carried))
             return;
 
-        occupied = true;
-
+        // Comprobar que es la estatua correcta
         if (carried == correctStatueID)
         {
-            Debug.Log("Correcto");
-            PuzzleManager.Instance.AddCorrectStatue();
+            occupied = true;
+
+            statueImageRenderer.sprite = statueSprite;
+            statueImageRenderer.enabled = true;
+
+            GameStateSingleton.Instance.placedStatues.Add(carried);
+
+            GameStateSingleton.Instance.carriedStatue = "";
+
+            Debug.Log("Estatua correcta");
+
+            if (GameStateSingleton.Instance.placedStatues.Count >= 4)
+            {
+                Debug.Log("Puzzle completado");
+
+                GameStateSingleton.Instance.currentState =
+                    GameStateSingleton.GameState.GodsPuzzleSolved;
+            }
         }
         else
         {
-            Debug.Log("Incorrecto");
+            Debug.Log("Estatua incorrecta");
         }
-
-        GameStateSingleton.Instance.carriedStatue = "";
     }
 }

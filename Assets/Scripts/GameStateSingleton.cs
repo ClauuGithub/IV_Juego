@@ -58,6 +58,8 @@ public class GameStateSingleton : MonoBehaviour
 
     [Header("Puzzle Estatuas")]
     public string carriedStatue = "";
+    public HashSet<string> collectedStatues = new HashSet<string>();
+    public HashSet<string> placedStatues = new HashSet<string>();
 
     private void Awake()
     {
@@ -74,7 +76,7 @@ public class GameStateSingleton : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
+        //Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
 
         // Si estamos pausados, muertos o en el MENÚ PRINCIPAL, no hacemos nada
         if (isPaused || gameOver || currentState == GameState.MainMenu) return;
