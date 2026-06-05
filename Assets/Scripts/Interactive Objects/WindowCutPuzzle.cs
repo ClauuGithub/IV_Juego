@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class WindowCutPuzzle : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class WindowCutPuzzle : MonoBehaviour
     public Collider2D shapeTemplate; // Collider2D invisible con la forma correcta
     public LineRenderer lineRenderer; // Para dibujar el trazo
     public GameObject templateVisual;   // Template de la forma a seguir
+    public int minLength; // Longitud mínima del trazo (puntos)
+    public float requiredPercentage; // Porcentaje dentro de la figura requerido
 
     [Header("Dibujo")]
     [SerializeField] private float minDistance = 0.05f;
@@ -97,32 +100,52 @@ public class WindowCutPuzzle : MonoBehaviour
 
     private void CheckCut()
     {
-        bool correct = true;
+        // Longitud mínima
+        if (points.Count < minLength)
+        {
+            Fail();
+            return;
+        }
+
+        // Cuántos puntos están dentro del collider
+        int inside = 0;
 
         // Compara cada punto con el collider del shapeTemplate
         foreach (Vector3 p in points)
         {
-            if (!shapeTemplate.OverlapPoint(p))
+            if (shapeTemplate.OverlapPoint(p))
             {
-                correct = false;
-                break;
+                inside++;
             }
         }
 
-        if (correct)
-        {
-            MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
-            //if (!string.IsNullOrEmpty(nextScene))
-            GameStateSingleton.Instance.RegisterFinishTime();
-            StartCoroutine(LoadNextScene());
-        }
-        else
-        {
-            MessageManager.Instance.ShowMessage("El corte no es correcto. Intenta de nuevo.", 3f);
-            lineRenderer.positionCount = 0;
-            points.Clear();
-        }
+        MessageManager.Instance.ShowMessage("SUPERADO", 3f);
+        lineRenderer.positionCount = 0;
+        points.Clear();
+
+       //float percentInside = (float)inside / points.Count;
+       //
+       //if (percentInside >= requiredPercentage)
+       //{
+       //    MessageManager.Instance.ShowMessage("SUPERADO", 3f);
+       //    lineRenderer.positionCount = 0;
+       //    points.Clear();
+       //    // MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
+       //    // // GameStateSingleton.Instance.RegisterFinishTime();
+       //    // StartCoroutine(LoadNextScene());
+       //}
+       //else
+       //{
+       //    Fail();
+       //}
+    }  //
+    private void Fail()
+    {
+        MessageManager.Instance.ShowMessage("El corte no es válido", 3f);
+        lineRenderer.positionCount = 0;
+        points.Clear();
     }
+
 
     private IEnumerator LoadNextScene()
     {

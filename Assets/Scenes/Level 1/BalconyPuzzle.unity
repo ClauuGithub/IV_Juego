@@ -2049,6 +2049,8 @@ MonoBehaviour:
   shapeTemplate: {fileID: 45539693}
   lineRenderer: {fileID: 822028070}
   templateVisual: {fileID: 293681355}
+  minLength: 320
+  requiredPercentage: 0
   minDistance: 0.05
   nextScene: CutScene2
   sceneDelay: 3
