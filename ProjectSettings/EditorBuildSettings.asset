@@ -39,6 +39,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2/GameScene2.unity
     guid: f9161fb9e73ff3d41906b45f3ac4bf67
   - enabled: 1
+    path: Assets/Scenes/Level2/EstatuasZone.unity
+    guid: 743368a87ff48464cb93832f319fa320
+  - enabled: 1
+    path: Assets/Scenes/Level2/BuhardillaZone.unity
+    guid: 7fbe84c28df67de4c873e87f6ab6ece5
+  - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: e55edecc98c8dfa42bdd284f643cc5cf
   - enabled: 1
