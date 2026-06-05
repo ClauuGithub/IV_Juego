@@ -71,11 +71,10 @@ public class PedirPistas : MonoBehaviour
         ayuda = pistas[0]; // Volvemos a la primera pista del juego
         changed = false;
 
-        // Volvemos a buscar el componente de texto por si acaso cambiamos de escena
         InitTexto();
     }
 
-    // OBLIGATORIO: Limpiar eventos al destruir
+    // Limpiar eventos al destruir
     private void OnDestroy()
     {
         if (Instance == this)
