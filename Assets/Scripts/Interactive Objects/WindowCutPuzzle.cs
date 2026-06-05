@@ -11,7 +11,7 @@ public class WindowCutPuzzle : MonoBehaviour
     public LineRenderer lineRenderer; // Para dibujar el trazo
     public GameObject templateVisual;   // Template de la forma a seguir
     public int minLength; // Longitud mínima del trazo (puntos)
-    public float requiredPercentage; // Porcentaje dentro de la figura requerido
+    public int maxLength; // Longitud mínima del trazo (puntos)
 
     [Header("Dibujo")]
     [SerializeField] private float minDistance = 0.05f;
@@ -101,7 +101,7 @@ public class WindowCutPuzzle : MonoBehaviour
     private void CheckCut()
     {
         // Longitud mínima
-        if (points.Count < minLength)
+        if (points.Count < minLength || points.Count > maxLength)
         {
             Fail();
             return;
@@ -119,29 +119,12 @@ public class WindowCutPuzzle : MonoBehaviour
             }
         }
 
-        MessageManager.Instance.ShowMessage("SUPERADO", 3f);
-        lineRenderer.positionCount = 0;
-        points.Clear();
-
-       //float percentInside = (float)inside / points.Count;
-       //
-       //if (percentInside >= requiredPercentage)
-       //{
-       //    MessageManager.Instance.ShowMessage("SUPERADO", 3f);
-       //    lineRenderer.positionCount = 0;
-       //    points.Clear();
-       //    // MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
-       //    // // GameStateSingleton.Instance.RegisterFinishTime();
-       //    // StartCoroutine(LoadNextScene());
-       //}
-       //else
-       //{
-       //    Fail();
-       //}
-    }  //
+        MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
+        StartCoroutine(LoadNextScene());       
+    }  
     private void Fail()
     {
-        MessageManager.Instance.ShowMessage("El corte no es válido", 3f);
+        MessageManager.Instance.ShowMessage("El corte no es válido. Prueba de nuevo", 3f);
         lineRenderer.positionCount = 0;
         points.Clear();
     }

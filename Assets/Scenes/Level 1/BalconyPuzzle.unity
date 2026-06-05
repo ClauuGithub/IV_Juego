@@ -769,7 +769,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -206701651332219563, guid: cb29d3c625984dd4cbe6e4fe96326c69, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2049,8 +2049,8 @@ MonoBehaviour:
   shapeTemplate: {fileID: 45539693}
   lineRenderer: {fileID: 822028070}
   templateVisual: {fileID: 293681355}
-  minLength: 320
-  requiredPercentage: 0
+  minLength: 310
+  maxLength: 340
   minDistance: 0.05
   nextScene: CutScene2
   sceneDelay: 3
