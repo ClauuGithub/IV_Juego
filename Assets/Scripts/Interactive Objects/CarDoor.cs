@@ -15,7 +15,7 @@ public class CarDoor : MonoBehaviour
         }
         else
         {
-            MessageManager.Instance.ShowMessage("Si dejaran las llaves puestas sería demasiado fácil", 5f);
+            MessageManager.Instance.ShowMessage("Si dejaran las llaves puestas sería demasiado fácil.", 5f);
         }
     }
 }

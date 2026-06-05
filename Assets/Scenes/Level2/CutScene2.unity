@@ -1079,15 +1079,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   dialogueText: {fileID: 715297548}
   sentences:
-  - 'Trapicheo: Me estoy acercando,'
-  - "Trapicheo:  detr\xE1s de esas puertas esta la galer\xEDa de Apolo para robar
+  - 'Trapicheo: Me estoy acercando.'
+  - "Trapicheo:  Detr\xE1s de esas puertas est\xE1 la Galer\xEDa de Apolo para robar
     la tiara."
-  - "Trapicheo:  La puerta est\xE1 abierta \xA1perfecto! "
+  - "Trapicheo:  La puerta est\xE1 abierta, \xA1perfecto! "
   - ...
-  - 'BOOM! '
+  - "\xA1BOOM! "
   - ' ...'
-  - "Trapicheo: \xA1Nooo! La puerta se ha cerrado,"
-  - 'Trapicheo: con la ventana abierta hay corriente de aire...'
+  - "Trapicheo: \xA1Nooo! La puerta se ha cerrado."
+  - 'Trapicheo: Con la ventana abierta hay corriente de aire...'
   - 'Trapicheo: Espero que nadie haya escuchado el portazo... Es que hay mucho fantasma
     suelto... '
   dialogueSpeed: 0.03

@@ -16,6 +16,7 @@ public class Mensaje : MonoBehaviour
     public TMP_Text Pista;
     void Start()
     {
+        Pista.text = "Inserte el código";
         Codigo.CodigoDig += Comprobar;
 
     }
@@ -26,10 +27,11 @@ public class Mensaje : MonoBehaviour
     }
     public void Comprobar(int[] cod)
     {
-        sol = new int[] { 1, 2, 3}  // Estaba en 307
-        ;
+        sol = new int[] { 1, 2, 3 };  // Estaba en 307
+
         ac = 0;
         ap = 0;
+
         for (int i = 0; i < sol.Length; i++)
         {
             if (sol[i] == cod[i])
@@ -80,6 +82,11 @@ public class Mensaje : MonoBehaviour
             MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón.", 5f);
             HacerCodigo?.Invoke(2);
         }
+    }
+
+    void OnEnable()
+    {
+        Pista.text = "Inserte el código";
     }
 }
 

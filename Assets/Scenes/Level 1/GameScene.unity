@@ -148,8 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999e92480fa9cb64e8f6e9cb6906b7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStateSingleton
-  carUnlocked: 0
-  codeSolved: 0
   maxTime: 720
   currentTime: 0
   isPaused: 0
@@ -161,6 +159,8 @@ MonoBehaviour:
   blinkSpeed: 0.5
   bestTimes: []
   rankingDirty: 0
+  currentState: 1
+  carriedStatue: 
   totalGems: 0
 --- !u!4 &44588319
 Transform:
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Si dejaran las llaves puestas ser\xEDa demasiado f\xE1cil"
+  m_text: "Si dejaran las llaves puestas ser\xEDa demasiado f\xE1cil."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1624,9 +1624,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedirPistas
   pistas:
-  - Mira las ventanas
-  - Mira el coche
-  - Sube al balcon
+  - Mira las ventanas.
+  - Mira el coche.
+  - "Sube al balc\xF3n."
   - 
   - 
   - 
@@ -2917,6 +2917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f680d14bd66aa8c439ffdc27489e2ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RankingUI
+  rankingTexts: []
 --- !u!4 &1276267187
 Transform:
   m_ObjectHideFlags: 0
