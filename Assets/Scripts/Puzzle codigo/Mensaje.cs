@@ -74,7 +74,7 @@ public class Mensaje : MonoBehaviour
 
         if (ac == 3)
         {
-            GameStateSingleton.Instance.currentState = GameStateSingleton.GameState.UpperFloorOpened;
+            GameStateSingleton.Instance.currentState = GameStateSingleton.GameState.BalconyUnlocked;
             Debug.Log("Estado actual: " + GameStateSingleton.Instance.currentState);
 
             MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón", 5f);
