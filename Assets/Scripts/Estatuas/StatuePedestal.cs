@@ -7,6 +7,9 @@ public class StatuePedestal : MonoBehaviour
 
     private bool occupied = false;
 
+    [TextArea]
+    public string clueText;
+
     private void Start()
     {
         Debug.Log(GameStateSingleton.Instance);
@@ -20,6 +23,9 @@ public class StatuePedestal : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Mostrar pista siempre
+        MessageManager.Instance.ShowMessage(clueText);
+
         if (occupied)
             return;
 
@@ -31,6 +37,7 @@ public class StatuePedestal : MonoBehaviour
         // Comprobar que es la estatua correcta
         if (carried == correctStatueID)
         {
+            MessageManager.Instance.ShowMessage("¡Perfecto!");
             occupied = true;
             statueVisual.SetActive(true);
 
@@ -40,8 +47,9 @@ public class StatuePedestal : MonoBehaviour
 
             Debug.Log("Estatua correcta");
 
-            if (GameStateSingleton.Instance.placedStatues.Count >= 4)
+            if (GameStateSingleton.Instance.placedStatues.Count >= 3)
             {
+                MessageManager.Instance.ShowMessage("He resuleto el enigma de los dioses. La puerta a la siguiente sala debe de volver a estar abierta", 3f);
                 Debug.Log("Puzzle completado");
 
                 GameStateSingleton.Instance.currentState =
@@ -50,6 +58,7 @@ public class StatuePedestal : MonoBehaviour
         }
         else
         {
+            MessageManager.Instance.ShowMessage("Hmmm este no es su sitio");
             Debug.Log("Estatua incorrecta");
         }
     }
