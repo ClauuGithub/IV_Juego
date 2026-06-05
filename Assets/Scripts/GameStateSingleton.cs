@@ -206,6 +206,8 @@ public class GameStateSingleton : MonoBehaviour
 
         ResetGems();
 
+        PedirPistas.Instance.ResetPistas();
+
         isPaused = false;
         gameOver = false;
         isWarningActive = false;

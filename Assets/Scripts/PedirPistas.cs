@@ -15,31 +15,39 @@ public class PedirPistas : MonoBehaviour
     int f = 0;
     void Awake()
     {
-        
-        GameStateSingleton.CogerLlave += darPista;
-        Mensaje.HacerCodigo += darPista;
-        Debug.Log("a");
-        Pista = GameObject.Find("TextoPista").GetComponent<TMP_Text>();
-        Debug.Log("b");
-        Pista.text = pistas[0];
-        Debug.Log("c");
-        f = 0;
-        Debug.Log("d");
-
 
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // IMPORTANTE: Solo nos suscribimos una vez, en la instancia real que sobrevive
+            GameStateSingleton.CogerLlave += darPista;
+            Mensaje.HacerCodigo += darPista;
+
+            InitTexto();
         }
-        else { Destroy(gameObject); Debug.Log("DESTRUI"); }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    void Update()
+    private void Start()
     {
-      
+        PedirPistas.Instance?.InitTexto();
     }
 
+    public void InitTexto()
+    {
+        GameObject textoObj = GameObject.Find("TextoPista");
+        if (textoObj != null)
+        {
+            Pista = textoObj.GetComponent<TMP_Text>();
+            Pista.text = string.IsNullOrEmpty(ayuda) ? pistas[0] : ayuda;
+        }
+    }
     public void darPista(int a) 
     { 
         ayuda = pistas[a];
@@ -56,6 +64,24 @@ public class PedirPistas : MonoBehaviour
         else {
             Pista.text = ayuda;
             MessageManager.Instance.ShowMessage(Pista.text, 5f);
+        }
+    }
+    public void ResetPistas()
+    {
+        ayuda = pistas[0]; // Volvemos a la primera pista del juego
+        changed = false;
+
+        // Volvemos a buscar el componente de texto por si acaso cambiamos de escena
+        InitTexto();
+    }
+
+    // OBLIGATORIO: Limpiar eventos al destruir
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            GameStateSingleton.CogerLlave -= darPista;
+            Mensaje.HacerCodigo -= darPista;
         }
     }
 }
