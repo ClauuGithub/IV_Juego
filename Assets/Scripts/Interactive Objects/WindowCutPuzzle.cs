@@ -30,39 +30,65 @@ public class WindowCutPuzzle : MonoBehaviour
             templateVisual.SetActive(false); // empieza invisible
     }
 
-    private void OnMouseDown()
-    {
-        // PRIMER CLICK: muestra la plantilla
-        if (!templateShown)
-        {
-            templateShown = true;
-            if (templateVisual != null)
-                templateVisual.SetActive(true);
-
-            MessageManager.Instance.ShowMessage("Observa la forma y luego dibuja sobre ella", 3f);
-            return; // NO empezamos a dibujar todavía
-        }
-
-        // SEGUNDO CLICK: comienzo del trazo
-        isDrawing = true;
-        points.Clear();
-        lineRenderer.positionCount = 0;
-    }
+    // private void OnMouseDown()
+    // {
+    //     // PRIMER CLICK: muestra la plantilla
+    //     if (!templateShown)
+    //     {
+    //         templateShown = true;
+    //         if (templateVisual != null)
+    //             templateVisual.SetActive(true);
+    // 
+    //         MessageManager.Instance.ShowMessage("Observa la forma y luego dibuja sobre ella", 3f);
+    //         return; // NO empezamos a dibujar todavía
+    //     }
+    // 
+    //     // SEGUNDO CLICK: comienzo del trazo
+    //     isDrawing = true;
+    //     points.Clear();
+    //     lineRenderer.positionCount = 0;
+    // }
 
     private void Update()
     {
-        if (!isDrawing) return;
-
-        if (Input.GetMouseButton(0))
+        // 1. PRIMER CLICK: muestra la plantilla
+        if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0; // Plano 2D
-            points.Add(mousePos);
+            if (!templateShown)
+            {
+                templateShown = true;
+                templateVisual.SetActive(true);
+                MessageManager.Instance.ShowMessage("Observa la forma", 2f);
+                return;
+            }
 
-            lineRenderer.positionCount = points.Count;
-            lineRenderer.SetPositions(points.ToArray());
+            // 2. SEGUNDO CLICK: comienzo del trazo
+            isDrawing = true;
+            points.Clear();
+            lineRenderer.positionCount = 0;
         }
-        else if (Input.GetMouseButtonUp(0))
+
+        // 3. DIBUJO 
+        if (isDrawing && Input.GetMouseButton(0))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = 10f;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            mousePos.z = 0;
+
+            if (shapeTemplate.OverlapPoint(mousePos))
+            {
+                if (points.Count == 0 || Vector3.Distance(points[^1], mousePos) > minDistance)
+                {
+                    points.Add(mousePos);
+                    lineRenderer.positionCount = points.Count;
+                    lineRenderer.SetPositions(points.ToArray());
+                }
+            }
+        }
+
+        // 4. SOLTAR
+        if (Input.GetMouseButtonUp(0) && isDrawing)
         {
             isDrawing = false;
             CheckCut();
