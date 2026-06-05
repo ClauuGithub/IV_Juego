@@ -76,7 +76,7 @@ public class GameStateSingleton : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
+        Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
 
         // Si estamos pausados, muertos o en el MENÚ PRINCIPAL, no hacemos nada
         if (isPaused || gameOver || currentState == GameState.MainMenu) return;
@@ -214,7 +214,7 @@ public class GameStateSingleton : MonoBehaviour
         rankingDirty = false;
     }
 
-    public void StartGame()
+    /*public void StartGame()
     {
 
         Time.timeScale = 1f; 
@@ -225,7 +225,7 @@ public class GameStateSingleton : MonoBehaviour
 
         // AHORA SÍ iniciamos la partida
         currentState = GameState.SearchingKey;
-    }
+    }*/
 
 }
 

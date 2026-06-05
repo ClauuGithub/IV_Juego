@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static GameStateSingleton;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -21,8 +22,17 @@ public class SceneLoader : MonoBehaviour
 
     public void MenuScene()
     {
-        GameStateSingleton.Instance.ResetGameState();
+        //GameStateSingleton.Instance.ResetGameState();
         SceneManager.LoadScene("MenuScene");
+    }
+    public void StartNewGame()
+    {
+        if (GameStateSingleton.Instance != null)
+        {
+            GameStateSingleton.Instance.ResetGameState();
+            GameStateSingleton.Instance.currentState = GameState.SearchingKey;
+        }
+        Level1MainScene();
     }
 
     public void Level1MainScene()
