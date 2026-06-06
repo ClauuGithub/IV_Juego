@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c9bcea2a31b99eb41998e3bfe15a8048
+guid: 25c7aacee5fabc74a840824b8749fcf7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5426101315080957175
-    second: Fondo2.3_0
+      213: 1982711446728729104
+    second: Final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fondo2.3_0
+      name: Final_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7fc2ea8b5626d4b40800000000000000
-      internalID: 5426101315080957175
+      spriteID: 012ed525e81048b10800000000000000
+      internalID: 1982711446728729104
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fondo2.3_0: 5426101315080957175
+      Final_0: 1982711446728729104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
