@@ -10,8 +10,9 @@ public class WindowCutPuzzle : MonoBehaviour
     public Collider2D shapeTemplate; // Collider2D invisible con la forma correcta
     public LineRenderer lineRenderer; // Para dibujar el trazo
     public GameObject templateVisual;   // Template de la forma a seguir
-    public int minLength; // Longitud mínima del trazo (puntos)
-    public int maxLength; // Longitud mínima del trazo (puntos)
+    public float minLength; // Longitud mínima del trazo (puntos)
+    public float maxLength; // Longitud mínima del trazo (puntos)
+    private float length;
 
     [Header("Dibujo")]
     [SerializeField] private float minDistance = 0.05f;
@@ -100,8 +101,11 @@ public class WindowCutPuzzle : MonoBehaviour
 
     private void CheckCut()
     {
+        MessageManager.Instance.ShowMessage("Puntos: " + points.Count, 5f);
         // Longitud mínima
-        if (points.Count < minLength || points.Count > maxLength)
+        length = GetTotalLength();
+
+        if (length < minLength || length > maxLength)
         {
             Fail();
             return;
@@ -120,15 +124,30 @@ public class WindowCutPuzzle : MonoBehaviour
         }
 
         MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
-        StartCoroutine(LoadNextScene());       
+        //MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana! Longitud: " + length, 3f);
+        StartCoroutine(LoadNextScene());
+        // lineRenderer.positionCount = 0;
+        // points.Clear();
     }  
     private void Fail()
     {
         MessageManager.Instance.ShowMessage("El corte no es válido. Prueba de nuevo", 3f);
+        // MessageManager.Instance.ShowMessage("El corte no es válido. Prueba de nuevo. Longitud: " + length, 3f);
         lineRenderer.positionCount = 0;
         points.Clear();
     }
 
+    private float GetTotalLength()
+    {
+        float total = 0f;
+
+        for (int i = 1; i < points.Count; i++)
+        {
+            total += Vector3.Distance(points[i - 1], points[i]);
+        }
+
+        return total;
+    }
 
     private IEnumerator LoadNextScene()
     {
