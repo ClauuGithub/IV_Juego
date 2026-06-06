@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9bd011aec80d44c805f2569f14d874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainHallBackground
-  fondoPuertaCerrada: {fileID: 0}
+  fondoPuertaCerrada: {fileID: 142589240}
   fondoPuertaAbierta: {fileID: 142589240}
 --- !u!1 &1642898738
 GameObject:
