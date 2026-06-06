@@ -12,11 +12,12 @@ public class Mensaje : MonoBehaviour
     public int ap;
 
     public static event Action<int> HacerCodigo;
+    private bool primeraComprobacion = true;
+
 
     public TMP_Text Pista;
     void Start()
     {
-        Pista.text = "Inserte el código";
         Codigo.CodigoDig += Comprobar;
 
     }
@@ -27,11 +28,18 @@ public class Mensaje : MonoBehaviour
     }
     public void Comprobar(int[] cod)
     {
+
+        if (cod[0] == 0 && cod[1] == 0 && cod[2] == 0 && primeraComprobacion)
+        {
+            primeraComprobacion = false;
+            Pista.text = "Inserte el código";
+            return;
+        }
+
         sol = new int[] { 1, 2, 3 };  // Estaba en 307
 
         ac = 0;
         ap = 0;
-
         for (int i = 0; i < sol.Length; i++)
         {
             if (sol[i] == cod[i])
@@ -84,9 +92,5 @@ public class Mensaje : MonoBehaviour
         }
     }
 
-    void OnEnable()
-    {
-        Pista.text = "Inserte el código";
-    }
 }
 
