@@ -21,6 +21,10 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip puertaCerrandoseSound;
 
+    //Cinemática final
+    [SerializeField] private AudioClip ringSound;
+    [SerializeField] private AudioClip boomSound;
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -28,21 +32,35 @@ public class DialogueController : MonoBehaviour
 
     void Update()
     {
-        // SOLO acepta espacio/ratón cuando NO está escribiendo
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !isTyping)
         {
             index++;
 
-            if (index == 4)
+            switch (index)
             {
-                if (puertaAbierta != null)
-                    puertaAbierta.SetActive(false);
+                // Cinemática puerta
+                case 4:
+                    if (puertaAbierta != null)
+                        puertaAbierta.SetActive(false);
 
-                if (puertaCerrada != null)
-                    puertaCerrada.SetActive(true);
+                    if (puertaCerrada != null)
+                        puertaCerrada.SetActive(true);
 
-                if (audioSource != null && puertaCerrandoseSound != null)
-                    audioSource.PlayOneShot(puertaCerrandoseSound);
+                    if (audioSource != null && puertaCerrandoseSound != null)
+                        audioSource.PlayOneShot(puertaCerrandoseSound);
+                    break;
+
+                // Sonido del télefono
+                case 9:
+                    if (audioSource != null && ringSound != null)
+                        audioSource.PlayOneShot(ringSound);
+                    break;
+
+                // Explosión
+                case 19:
+                    if (audioSource != null && boomSound != null)
+                        audioSource.PlayOneShot(boomSound);
+                    break;
             }
 
             if (index < sentences.Length)

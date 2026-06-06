@@ -1579,13 +1579,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1268172029}
   m_SourcePrefab: {fileID: 100100000, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
 --- !u!4 &1268172027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3318473320432212421, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
   m_PrefabInstance: {fileID: 1268172026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1268172028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442378707474524200, guid: c7c0102ee186d4f46a04967ce30b3f20, type: 3}
+  m_PrefabInstance: {fileID: 1268172026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1268172029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268172028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8438006b29b84b9459b4fc9dbc71b30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrownTouch
 --- !u!1 &1276267185
 GameObject:
   m_ObjectHideFlags: 0
