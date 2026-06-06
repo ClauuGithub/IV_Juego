@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863fc24dc273c144ab0abf194c90e108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemsCounter
-  counterText: {fileID: 0}
+  counterText: {fileID: 1267529264}
 --- !u!1 &956286709
 GameObject:
   m_ObjectHideFlags: 0
