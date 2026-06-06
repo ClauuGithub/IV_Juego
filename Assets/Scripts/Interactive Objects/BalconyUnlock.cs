@@ -13,7 +13,7 @@ public class BalconyUnlock : MonoBehaviour
         }
         else
         {
-            MessageManager.Instance.ShowMessage("Podría entrar por ahí... si llegase claro", 5f);
+            MessageManager.Instance.ShowMessage("Podría entrar por ahí... Si llegase, claro.", 5f);
         }
 
 

@@ -13,7 +13,7 @@ public class LadderUnlock : MonoBehaviour
         }
         else
         {
-            MessageManager.Instance.ShowMessage("La escalera no funciona si el coche no está arrancado", 5f);
+            MessageManager.Instance.ShowMessage("La escalera no funciona si el coche no está arrancado.", 5f);
         }
     }
 

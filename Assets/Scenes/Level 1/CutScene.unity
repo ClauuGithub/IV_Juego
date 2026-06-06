@@ -924,26 +924,31 @@ MonoBehaviour:
   - 'La Virgen de Montserrat, patrona de los delitos aka: Moreneta'
   - 'Moreneta: Trapicheo, la ARS (Agencia de Robo Spain) tiene un nuevo trabajo para
     ti.'
-  - "Tu pr\xF3xima misi\xF3n ser\xE1 en Paris nos han encargado robar la tiara de
-    la mujer de Napole\xF3n. Has de completar esta misi\xF3n con sigilo y rapidez."
-  - "Una vez consigas entrar al museo del Louvre tendr\xE1s alrededor de una hora,
-    creemos que esta tarea es apropiada para alguien con un nivel "
+  - "Tu pr\xF3xima misi\xF3n ser\xE1 en Par\xEDs. Nos han encargado robar la tiara
+    de la mujer de Napole\xF3n. Has de completar esta misi\xF3n con sigilo y rapidez."
+  - "Una vez consigas entrar al museo del Louvre tendr\xE1s alrededor de una hora.
+    Creemos que esta tarea es apropiada para alguien con un nivel "
   - "principiante como el tuyo (despu\xE9s de todo son franceses...). \xBFAlguna
     pregunta?  "
   - 'Trapicheo: ...'
   - 'Moreneta: De tan pocas palabras como siempre. Una vez tengas las joyas tendremos
     preparado para ti un transporte de vuelta'
-  - "al m\xE1s puro estilo Ping\xFCinos de Madagascar. Buena suerte agente."
+  - "al m\xE1s puro estilo \"Ping\xFCinos de Madagascar\". Buena suerte, agente."
   - 'Trapicheo: ... '
-  - "Moreneta: Recuerda que si quieres practicar el departamento de RA (Robo Amateur)
+  - "Moreneta: Recuerda que si quieres practicar, el departamento de RA (Robo Amateur)
     pone a disposici\xF3n de todos sus agentes"
   - principiantes salas de entrenamiento, aunque no esperes mucho que con la crisis
     no hay dinero en la ARS...
   - "(No hay dinero en el departamento de recursos humanos para sacar a nadie del
-    calabozo as\xED que no la cagues) "
+    calabozo as\xED que no la cagues.) "
   - "Trapicheo: (Parece que ni las organizaciones criminales tienen dinero hoy en
-    d\xEDa) "
+    d\xEDa.) "
   dialogueSpeed: 0.03
+  nextScene: GameScene
+  puertaAbierta: {fileID: 0}
+  puertaCerrada: {fileID: 0}
+  audioSource: {fileID: 0}
+  puertaCerrandoseSound: {fileID: 0}
 --- !u!4 &2069946947
 Transform:
   m_ObjectHideFlags: 0

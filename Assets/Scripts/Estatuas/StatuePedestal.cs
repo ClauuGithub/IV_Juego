@@ -45,11 +45,11 @@ public class StatuePedestal : MonoBehaviour
 
             GameStateSingleton.Instance.carriedStatue = "";
 
-            Debug.Log("Estatua correcta");
+            Debug.Log("Estatua correcta.");
 
             if (GameStateSingleton.Instance.placedStatues.Count >= 3)
             {
-                MessageManager.Instance.ShowMessage("He resuleto el enigma de los dioses. La puerta a la siguiente sala debe de volver a estar abierta", 3f);
+                MessageManager.Instance.ShowMessage("He resuelto el enigma de los dioses. La puerta a la siguiente sala debe de estar abierta de nuevo.", 3f);
                 Debug.Log("Puzzle completado");
 
                 GameStateSingleton.Instance.currentState =
@@ -58,8 +58,8 @@ public class StatuePedestal : MonoBehaviour
         }
         else
         {
-            MessageManager.Instance.ShowMessage("Hmmm este no es su sitio");
-            Debug.Log("Estatua incorrecta");
+            MessageManager.Instance.ShowMessage("Hmmm... Este no es su sitio.");
+            Debug.Log("Estatua incorrecta.");
         }
     }
 }
