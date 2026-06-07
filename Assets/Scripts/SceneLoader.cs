@@ -65,6 +65,16 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("CreditsScene");
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+
+        // Para ver que funciona mientras se prueba dentro de Unity
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
+
 
 }
 
