@@ -926,8 +926,8 @@ MonoBehaviour:
     ti.'
   - "Tu pr\xF3xima misi\xF3n ser\xE1 en Par\xEDs. Nos han encargado robar la tiara
     de la mujer de Napole\xF3n. Has de completar esta misi\xF3n con sigilo y rapidez."
-  - "Una vez consigas entrar al museo del Louvre tendr\xE1s alrededor de una hora.
-    Creemos que esta tarea es apropiada para alguien con un nivel "
+  - "Una vez consigas entrar al museo del Louvre tendr\xE1s doce minutos. Creemos
+    que esta tarea es apropiada para alguien con un nivel "
   - "principiante como el tuyo (despu\xE9s de todo son franceses...). \xBFAlguna
     pregunta?  "
   - 'Trapicheo: ...'
@@ -949,6 +949,8 @@ MonoBehaviour:
   puertaCerrada: {fileID: 0}
   audioSource: {fileID: 0}
   puertaCerrandoseSound: {fileID: 0}
+  ringSound: {fileID: 0}
+  boomSound: {fileID: 0}
 --- !u!4 &2069946947
 Transform:
   m_ObjectHideFlags: 0
