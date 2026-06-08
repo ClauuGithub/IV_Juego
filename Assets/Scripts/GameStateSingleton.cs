@@ -47,10 +47,10 @@ public class GameStateSingleton : MonoBehaviour
     public Color warningColor;
     public float blinkSpeed = 0.5f; // velocidad en segundos
 
-    //Aplicación PATRÓN DIRTY FLAG
+    
     [Header("Ranking")]
     public List<float> bestTimes = new List<float>();
-    public bool rankingDirty;
+
 
     //Aplicación PATRÓN STATE estado actual
     public GameState currentState = GameState.SearchingKey;
@@ -148,26 +148,18 @@ public class GameStateSingleton : MonoBehaviour
         totalGems = 0;
     }
 
-    //RANKING DIRTY FLAG
+    //RANKING
     public void RegisterFinishTime()
     {
-        float newTime = currentTime;
-
-        if (bestTimes.Count < 3)
-        {
-            bestTimes.Add(newTime);
-            rankingDirty = true;
-            SaveBestTimes();
-            return;
-        }
-
-        bestTimes.Sort((a, b) => b.CompareTo(a));
-
-        if (newTime <= bestTimes[bestTimes.Count - 1])
-            return;
+        float newTime = maxTime - currentTime;
 
         bestTimes.Add(newTime);
-        rankingDirty = true;
+
+        bestTimes.Sort((a, b) => a.CompareTo(b));
+
+        if (bestTimes.Count > 3)
+            bestTimes.RemoveRange(3, bestTimes.Count - 3);
+
         SaveBestTimes();
     }
 
@@ -211,8 +203,6 @@ public class GameStateSingleton : MonoBehaviour
         gameOver = false;
         isWarningActive = false;
         blinkTimer = 0f;
-
-        rankingDirty = false;
     }
 
     /*public void StartGame()

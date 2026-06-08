@@ -11,27 +11,6 @@ public class RankingUI : MonoBehaviour
         UpdateUI();
     }
 
-    void Update()
-    {
-        var gs = GameStateSingleton.Instance;
-        if (gs == null) return;
-
-        if (!gs.rankingDirty) return;
-
-        RecalculateRanking(gs.bestTimes);
-        UpdateUI();
-
-        gs.rankingDirty = false;
-    }
-
-    void RecalculateRanking(List<float> times)
-    {
-        times.Sort((a, b) => b.CompareTo(a));
-
-        if (times.Count > 3)
-            times.RemoveRange(3, times.Count - 3);
-    }
-
     void UpdateUI()
     {
         var times = GameStateSingleton.Instance.bestTimes;
