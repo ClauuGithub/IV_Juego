@@ -90,7 +90,7 @@ public class WindowCutPuzzle : MonoBehaviour
         {
             MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
             //if (!string.IsNullOrEmpty(nextScene))
-            GameStateSingleton.Instance.RegisterFinishTime();
+            GameStateSingleton.Instance.RegisterFinishTime(); //CAMBIAR PARA REGISTRAR TIEMPO FINAL AL FINAL
             StartCoroutine(LoadNextScene());
         }
         else

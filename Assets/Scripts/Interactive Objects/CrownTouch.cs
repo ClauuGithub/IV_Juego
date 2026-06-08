@@ -5,10 +5,9 @@ public class CrownTouch : MonoBehaviour
 {
     void OnMouseDown()
     {
+        GameStateSingleton.Instance.RegisterFinishTime();
+        SceneManager.LoadScene("CutSceneEnd");
         
-            SceneManager.LoadScene("CutSceneEnd");
-        
-
 
     }
 }
