@@ -1,8 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class WindowCutPuzzle : MonoBehaviour
 {
@@ -10,6 +10,9 @@ public class WindowCutPuzzle : MonoBehaviour
     public Collider2D shapeTemplate; // Collider2D invisible con la forma correcta
     public LineRenderer lineRenderer; // Para dibujar el trazo
     public GameObject templateVisual;   // Template de la forma a seguir
+    public float minLength; // Longitud mínima del trazo (puntos)
+    public float maxLength; // Longitud mínima del trazo (puntos)
+    private float length;
 
     [Header("Dibujo")]
     [SerializeField] private float minDistance = 0.05f;
@@ -22,8 +25,6 @@ public class WindowCutPuzzle : MonoBehaviour
     private List<Vector3> points = new List<Vector3>();
     private bool templateShown = false; // Para el primer click
 
-    public static event Action<int> EntrarBalcon;
-
     private void Awake()
     {
         if (lineRenderer == null)
@@ -33,39 +34,65 @@ public class WindowCutPuzzle : MonoBehaviour
             templateVisual.SetActive(false); // empieza invisible
     }
 
-    private void OnMouseDown()
-    {
-        // PRIMER CLICK: muestra la plantilla
-        if (!templateShown)
-        {
-            templateShown = true;
-            if (templateVisual != null)
-                templateVisual.SetActive(true);
-
-            MessageManager.Instance.ShowMessage("Observa la forma y luego dibuja sobre ella", 3f);
-            return; // NO empezamos a dibujar todavía
-        }
-
-        // SEGUNDO CLICK: comienzo del trazo
-        isDrawing = true;
-        points.Clear();
-        lineRenderer.positionCount = 0;
-    }
+    // private void OnMouseDown()
+    // {
+    //     // PRIMER CLICK: muestra la plantilla
+    //     if (!templateShown)
+    //     {
+    //         templateShown = true;
+    //         if (templateVisual != null)
+    //             templateVisual.SetActive(true);
+    // 
+    //         MessageManager.Instance.ShowMessage("Observa la forma y luego dibuja sobre ella", 3f);
+    //         return; // NO empezamos a dibujar todavía
+    //     }
+    // 
+    //     // SEGUNDO CLICK: comienzo del trazo
+    //     isDrawing = true;
+    //     points.Clear();
+    //     lineRenderer.positionCount = 0;
+    // }
 
     private void Update()
     {
-        if (!isDrawing) return;
-
-        if (Input.GetMouseButton(0))
+        // 1. PRIMER CLICK: muestra la plantilla
+        if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0; // Plano 2D
-            points.Add(mousePos);
+            if (!templateShown)
+            {
+                templateShown = true;
+                templateVisual.SetActive(true);
+                MessageManager.Instance.ShowMessage("Observa la forma", 2f);
+                return;
+            }
 
-            lineRenderer.positionCount = points.Count;
-            lineRenderer.SetPositions(points.ToArray());
+            // 2. SEGUNDO CLICK: comienzo del trazo
+            isDrawing = true;
+            points.Clear();
+            lineRenderer.positionCount = 0;
         }
-        else if (Input.GetMouseButtonUp(0))
+
+        // 3. DIBUJO 
+        if (isDrawing && Input.GetMouseButton(0))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = 10f;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            mousePos.z = 0;
+
+            if (shapeTemplate.OverlapPoint(mousePos))
+            {
+                if (points.Count == 0 || Vector3.Distance(points[^1], mousePos) > minDistance)
+                {
+                    points.Add(mousePos);
+                    lineRenderer.positionCount = points.Count;
+                    lineRenderer.SetPositions(points.ToArray());
+                }
+            }
+        }
+
+        // 4. SOLTAR
+        if (Input.GetMouseButtonUp(0) && isDrawing)
         {
             isDrawing = false;
             CheckCut();
@@ -74,36 +101,56 @@ public class WindowCutPuzzle : MonoBehaviour
 
     private void CheckCut()
     {
-        bool correct = true;
+        MessageManager.Instance.ShowMessage("Puntos: " + points.Count, 5f);
+        // Longitud mínima
+        length = GetTotalLength();
+
+        if (length < minLength || length > maxLength)
+        {
+            Fail();
+            return;
+        }
+
+        // Cuántos puntos están dentro del collider
+        int inside = 0;
 
         // Compara cada punto con el collider del shapeTemplate
         foreach (Vector3 p in points)
         {
-            if (!shapeTemplate.OverlapPoint(p))
+            if (shapeTemplate.OverlapPoint(p))
             {
-                correct = false;
-                break;
+                inside++;
             }
         }
-        
-        if (correct)
+
+        MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
+        //MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana! Longitud: " + length, 3f);
+        StartCoroutine(LoadNextScene());
+        // lineRenderer.positionCount = 0;
+        // points.Clear();
+    }
+    private void Fail()
+    {
+        MessageManager.Instance.ShowMessage("El corte no es válido. Prueba de nuevo", 3f);
+        // MessageManager.Instance.ShowMessage("El corte no es válido. Prueba de nuevo. Longitud: " + length, 3f);
+        lineRenderer.positionCount = 0;
+        points.Clear();
+    }
+
+    private float GetTotalLength()
+    {
+        float total = 0f;
+
+        for (int i = 1; i < points.Count; i++)
         {
-            MessageManager.Instance.ShowMessage("¡Has cortado correctamente la ventana!", 3f);
-            //if (!string.IsNullOrEmpty(nextScene))
-            GameStateSingleton.Instance.RegisterFinishTime(); //CAMBIAR PARA REGISTRAR TIEMPO FINAL AL FINAL
-            StartCoroutine(LoadNextScene());
+            total += Vector3.Distance(points[i - 1], points[i]);
         }
-        else
-        {
-            MessageManager.Instance.ShowMessage("El corte no es correcto. Intenta de nuevo.", 3f);
-            lineRenderer.positionCount = 0;
-            points.Clear();
-        }
+
+        return total;
     }
 
     private IEnumerator LoadNextScene()
     {
-        EntrarBalcon?.Invoke(3);
         yield return new WaitForSeconds(sceneDelay);
         SceneManager.LoadScene(nextScene);
     }

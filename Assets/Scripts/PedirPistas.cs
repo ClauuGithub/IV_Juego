@@ -24,7 +24,7 @@ public class PedirPistas : MonoBehaviour
             // IMPORTANTE: Solo nos suscribimos una vez, en la instancia real que sobrevive
             GameStateSingleton.CogerLlave += darPista;
             Mensaje.HacerCodigo += darPista;
-            WindowCutPuzzle.EntrarBalcon += darPista;
+            //WindowCutPuzzle.EntrarBalcon += darPista;
 
             InitTexto();
         }
