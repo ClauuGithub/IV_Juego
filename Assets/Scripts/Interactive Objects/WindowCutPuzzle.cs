@@ -1,8 +1,9 @@
-using System.Collections.Generic;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class WindowCutPuzzle : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class WindowCutPuzzle : MonoBehaviour
     private bool isDrawing = false;
     private List<Vector3> points = new List<Vector3>();
     private bool templateShown = false; // Para el primer click
+
+    public static event Action<int> EntrarBalcon;
 
     private void Awake()
     {
@@ -151,6 +154,7 @@ public class WindowCutPuzzle : MonoBehaviour
 
     private IEnumerator LoadNextScene()
     {
+        EntrarBalcon?.Invoke(3);
         yield return new WaitForSeconds(sceneDelay);
         SceneManager.LoadScene(nextScene);
     }
