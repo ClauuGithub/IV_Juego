@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseState : AGameState
 {
@@ -6,8 +7,10 @@ public class PauseState : AGameState
 
     public override void Enter()
     {
+        context.lastGameScene = SceneManager.GetActiveScene().name;
         Time.timeScale = 0f; // Congela el motor de Unity (animaciones, físicas, etc.)
         context.isPaused = true;
+        SceneManager.LoadScene("PauseScene");
     }
 
     public override void Exit()
