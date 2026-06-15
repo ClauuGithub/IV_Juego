@@ -12,7 +12,9 @@ public class GameStateSingleton : MonoBehaviour
 
     public static event Action<int> CogerLlave;
 
-    // STATE AÑADIDO
+    // PATRÓN STATE: Guarda el estado  del juego
+    private IState currentStateObject;
+
     public enum GameState
     {
         MainMenu,
@@ -47,18 +49,24 @@ public class GameStateSingleton : MonoBehaviour
     public Color warningColor;
     public float blinkSpeed = 0.5f; // velocidad en segundos
 
-    
+    // Gemas
+    [Header("Contador Gemas")]
+    public int totalGems;
+
     [Header("Ranking")]
     public List<float> bestTimes = new List<float>();
 
 
-    //Aplicación PATRÓN STATE estado actual
+    // El progreso inicia en SearchingKey
     public GameState currentState = GameState.SearchingKey;
 
     [Header("Puzzle Estatuas")]
     public string carriedStatue = "";
     public HashSet<string> collectedStatues = new HashSet<string>();
     public HashSet<string> placedStatues = new HashSet<string>();
+
+    // DENTRO DE GAMESTATESINGLETON.CS (Añades esta línea arriba con tus variables)
+    [HideInInspector] public string lastGameScene;
 
     private void Awake()
     {
@@ -73,32 +81,34 @@ public class GameStateSingleton : MonoBehaviour
         else Destroy(gameObject);           // Destruye si el objeto está duplicado en otra escena
     }
 
+    // PATRÓN STATE
+    public void SetState(IState newState)
+    {
+        if (currentStateObject != null) currentStateObject.Exit(); // Avisa al estado anterior que se apague
+        currentStateObject = newState;
+        if (currentStateObject != null) currentStateObject.Enter(); // Activa las condiciones del nuevo estado
+    }
+
+    void Start()
+    {
+        // SEGURO DE VIDA: Si la escena actual es la de juego y el estado es null (porque estás testeando),
+        // o si venimos del menú pero queremos forzar el inicio del cronómetro:
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "GameScene" && currentStateObject == null)
+        {
+            SetState(new PlayingState(this));
+        }
+    }
+
+    // La lógica de actualización ahora es manejada por el patrón State
     private void Update()
     {
-        Debug.Log(currentState);  // Debug para mostrar el estado de la partida en todo momento
+        // Mantenemos tu Debug.Log para que veas la progresión del puzle en la consola
+        Debug.Log("Puzle actual: " + currentState + " | Estado mecánico: " + currentStateObject?.GetType().Name);
 
-        // Si estamos pausados, muertos o en el MENÚ PRINCIPAL, no hacemos nada
-        if (isPaused || gameOver || currentState == GameState.MainMenu) return;
-
-        currentTime -= Time.deltaTime;
-
-        if (currentTime <= 0)
-        {
-            currentTime = 0;
-            gameOver = true;
-            isWarningActive = false;
-        }
-
-        // Parpadeo de aviso
-        if (currentTime <= warningTime)
-        {
-            isWarningActive = true;
-        }
-        else
-        {
-            isWarningActive = false;
-            blinkTimer = 0f;
-        }
+        // DELEGACIÓN POLIMÓRFICA PURA
+        // Le decimos al estado actual: "Haz lo que te corresponda en este frame".
+        // Si es PlayingState, restará tiempo. Si es PauseState o GameOverState, no hará nada.
+        currentStateObject?.Update();
     }
 
     public void ResetTimer()
@@ -133,10 +143,6 @@ public class GameStateSingleton : MonoBehaviour
     {
         return keys.Contains(keyId);
     }
-
-    //Gemas
-    [Header("Contador Gemas")]
-    public int totalGems;
 
     public void AddGems(int amount)
     {
@@ -192,6 +198,8 @@ public class GameStateSingleton : MonoBehaviour
         currentState = GameState.MainMenu;
         //carUnlocked = false;
         //codeSolved = false;
+
+        currentStateObject = null;
 
         ResetTimer();
 

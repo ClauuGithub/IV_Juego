@@ -5,7 +5,8 @@ public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance;
 
-    private string lastGameScene; // para guardar en qué escena se estaba antes de pausar
+    // Guardamos aquí la escena para que los estados puedan leerla
+    [HideInInspector] public string lastGameScene;
 
     void Awake()
     {
@@ -19,20 +20,20 @@ public class PauseManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Resumir juego
+    // Vinculado al botón de Pausa del Canvas del juego
     public void PauseGame()
     {
+        // El mánager solo toma la foto de dónde estábamos...
         lastGameScene = SceneManager.GetActiveScene().name;
-        Time.timeScale = 0f;
-        GameStateSingleton.Instance.isPaused = true;
-        SceneManager.LoadScene("PauseScene");
+
+        // ...y le pasa el control total al patrón State
+        GameStateSingleton.Instance.SetState(new PauseState(GameStateSingleton.Instance));
     }
 
-    // Reanudar juego
+    // Vinculado al botón de Reanudar del Canvas de la escena de Pausa
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-        GameStateSingleton.Instance.isPaused = false;
-        SceneManager.LoadScene(lastGameScene);
+        // El mánager no hace nada más, el PlayingState se encargará de todo
+        GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
     }
 }
