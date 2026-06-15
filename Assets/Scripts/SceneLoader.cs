@@ -35,6 +35,7 @@ public class SceneLoader : MonoBehaviour
     // BOTONES AFECTADOS POR EL PATRÓN STATE
     // ==========================================
 
+    // Reset del juego al volver a empezar, tras la primera cinemática
     public void StartNewGame()
     {
         if (GameStateSingleton.Instance != null)

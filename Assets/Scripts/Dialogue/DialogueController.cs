@@ -25,6 +25,8 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private AudioClip ringSound;
     [SerializeField] private AudioClip boomSound;
 
+    [SerializeField] private bool esLaPrimeraCinematica = false;
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -69,12 +71,15 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
-                SceneLoader loader = Object.FindFirstObjectByType<SceneLoader>();
-
-                if (loader != null)
+                // Tras la primera cinemática se reseteará el juego
+                if (esLaPrimeraCinematica)
                 {
-                    // 2. ¡Ejecutamos TU método ya programado!
-                    loader.StartNewGame();
+                    SceneLoader loader = Object.FindFirstObjectByType<SceneLoader>();
+                    if (loader != null)
+                    {
+                        loader.StartNewGame();  //Resetea el juego
+                        return;
+                    }
                 }
 
                 GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
