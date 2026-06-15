@@ -10,5 +10,10 @@ public class GameOverState : AGameState
         context.gameOver = true;
         Time.timeScale = 0f;
         SceneManager.LoadScene("GameOverScene"); // Carga tu escena de derrota
+
+        if (MusicManager.instance != null)
+        {
+            MusicManager.instance.ChangeMusic(MusicManager.instance.menuMusic);
+        }
     }
 }

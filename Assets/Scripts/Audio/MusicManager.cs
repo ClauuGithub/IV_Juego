@@ -23,30 +23,13 @@ public class MusicManager : MonoBehaviour
             return;
         }
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // Cambia la música según el State
+    public void ChangeMusic(AudioClip clip)
     {
-        string name = scene.name;
-
-        if (name.Contains("MenuScene") || name.Contains("ConfigScene") || name.Contains("RankingScene") || name.Contains("CreditsScene"))
-        {
-            ChangeMusic(menuMusic);
-        }
-        else if (name.Contains("CutScene")|| name.Contains("CutScene2"))
-        {
-            ChangeMusic(cutSceneMusic);
-        }
-        else
-        {
-            ChangeMusic(gameMusic);
-        }
-    }
-
-    void ChangeMusic(AudioClip clip)
-    {
-        if (audioSource.clip == clip) return;
+        if (clip == null || audioSource.clip == clip) return;
 
         audioSource.clip = clip;
         audioSource.Play();

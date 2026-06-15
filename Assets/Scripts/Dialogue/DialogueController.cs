@@ -25,6 +25,9 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private AudioClip ringSound;
     [SerializeField] private AudioClip boomSound;
 
+    [SerializeField] private bool esLaPrimeraCinematica = false;
+    [SerializeField] private bool esLaUltimaCinematica = false;
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -69,6 +72,24 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
+                // Tras la primera cinemática se reseteará el juego
+                if (esLaPrimeraCinematica)
+                {
+                    SceneLoader loader = Object.FindFirstObjectByType<SceneLoader>();
+                    if (loader != null)
+                    {
+                        loader.StartNewGame();  //Resetea el juego
+                        return;
+                    }
+                }
+                else if (esLaUltimaCinematica)
+                {
+                    // Si es la última cinemática, se pasa al estado de victoria
+                    GameStateSingleton.Instance.SetState(new VictoryState(GameStateSingleton.Instance));
+                    return;
+                }
+
+                GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
                 SceneManager.LoadScene(nextScene);
             }
         }

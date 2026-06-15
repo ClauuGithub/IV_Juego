@@ -1040,6 +1040,8 @@ MonoBehaviour:
   puertaCerrandoseSound: {fileID: 0}
   ringSound: {fileID: 8300000, guid: 76b9749b37a05844f8ab22a65c94ad66, type: 3}
   boomSound: {fileID: 8300000, guid: 3f01ac70042cb9f4a94039c8e488f0d3, type: 3}
+  esLaPrimeraCinematica: 0
+  esLaUltimaCinematica: 1
 --- !u!4 &2069946947
 Transform:
   m_ObjectHideFlags: 0

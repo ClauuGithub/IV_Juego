@@ -951,6 +951,7 @@ MonoBehaviour:
   puertaCerrandoseSound: {fileID: 0}
   ringSound: {fileID: 0}
   boomSound: {fileID: 0}
+  esLaPrimeraCinematica: 1
 --- !u!4 &2069946947
 Transform:
   m_ObjectHideFlags: 0
