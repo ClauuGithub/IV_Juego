@@ -88,13 +88,9 @@ public class DialogueController : MonoBehaviour
                     GameStateSingleton.Instance.SetState(new VictoryState(GameStateSingleton.Instance));
                     return;
                 }
-                else
-                {
-                    GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
-                    SceneManager.LoadScene(nextScene);
-                }
 
-                    
+                GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
+                SceneManager.LoadScene(nextScene);
             }
         }
     }
