@@ -21,6 +21,12 @@ public class PlayingState : AGameState
 
         // ¡IMPORTANTE! Limpiamos el rastro para que no se quede en bucle al reanudar
         context.lastGameScene = "";
+
+        // ¡ACTIVAMOS LA MÚSICA DE JUEGO!
+        if (MusicManager.instance != null)
+        {
+            MusicManager.instance.ChangeMusic(MusicManager.instance.gameMusic);
+        }
     }
 
     public override void Update()

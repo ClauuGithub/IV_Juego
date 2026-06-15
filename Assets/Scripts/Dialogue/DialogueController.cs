@@ -69,6 +69,15 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
+                SceneLoader loader = Object.FindFirstObjectByType<SceneLoader>();
+
+                if (loader != null)
+                {
+                    // 2. ¡Ejecutamos TU método ya programado!
+                    loader.StartNewGame();
+                }
+
+                GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
                 SceneManager.LoadScene(nextScene);
             }
         }

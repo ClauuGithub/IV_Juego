@@ -156,6 +156,7 @@ public class WindowCutPuzzle : MonoBehaviour
     {
         EntrarBalcon?.Invoke(3);
         yield return new WaitForSeconds(sceneDelay);
+        GameStateSingleton.Instance.SetState(new CutSceneState(GameStateSingleton.Instance));
         SceneManager.LoadScene(nextScene);
     }
 }

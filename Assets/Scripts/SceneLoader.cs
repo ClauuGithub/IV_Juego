@@ -13,6 +13,8 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGameScene()
     {
+        // Cambiamos al estado de cinemática (pone la música de la cinemática)
+        GameStateSingleton.Instance.SetState(new CutSceneState(GameStateSingleton.Instance));
         SceneManager.LoadScene("CutScene");
     }
 
@@ -24,7 +26,9 @@ public class SceneLoader : MonoBehaviour
     public void MenuScene()
     {
         //GameStateSingleton.Instance.ResetGameState();
+        GameStateSingleton.Instance.SetState(new MainMenuState(GameStateSingleton.Instance));
         SceneManager.LoadScene("MenuScene");
+
     }
 
     // ==========================================
@@ -57,6 +61,7 @@ public class SceneLoader : MonoBehaviour
 
     public void Level2MainScene()
     {
+        GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
         SceneManager.LoadScene("GameScene2");
     }
 
