@@ -26,6 +26,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private AudioClip boomSound;
 
     [SerializeField] private bool esLaPrimeraCinematica = false;
+    [SerializeField] private bool esLaUltimaCinematica = false;
 
     void OnEnable()
     {
@@ -81,9 +82,19 @@ public class DialogueController : MonoBehaviour
                         return;
                     }
                 }
+                else if (esLaUltimaCinematica)
+                {
+                    // Si es la última cinemática, se pasa al estado de victoria
+                    GameStateSingleton.Instance.SetState(new VictoryState(GameStateSingleton.Instance));
+                    return;
+                }
+                else
+                {
+                    GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
+                    SceneManager.LoadScene(nextScene);
+                }
 
-                GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
-                SceneManager.LoadScene(nextScene);
+                    
             }
         }
     }

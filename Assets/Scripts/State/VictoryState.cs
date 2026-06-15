@@ -11,5 +11,10 @@ public class VictoryState : AGameState
         context.RegisterFinishTime(); // Registra el tiempo en tu Dirty Flag
         GameStateSingleton.Instance.SetState(new VictoryState(GameStateSingleton.Instance));
         SceneManager.LoadScene("VictoryScene"); // Carga la pantalla de victoria
+
+        if (MusicManager.instance != null)
+        {
+            MusicManager.instance.ChangeMusic(MusicManager.instance.menuMusic);
+        }
     }
 }
