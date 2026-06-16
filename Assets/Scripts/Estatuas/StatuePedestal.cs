@@ -52,8 +52,8 @@ public class StatuePedestal : MonoBehaviour
                 MessageManager.Instance.ShowMessage("He resuelto el enigma de los dioses. La puerta a la siguiente sala debe de estar abierta de nuevo.", 3f);
                 Debug.Log("Puzzle completado");
 
-                GameStateSingleton.Instance.currentState =
-                    GameStateSingleton.GameState.GodsPuzzleSolved;
+                GameStateSingleton.Instance.currentPuzzle =
+                    GameStateSingleton.Progress.GodsPuzzleSolved;
             }
         }
         else

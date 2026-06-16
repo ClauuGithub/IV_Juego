@@ -1686,8 +1686,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameStateSingleton
   maxTime: 720
   currentTime: 0
-  isPaused: 0
-  gameOver: 0
   warningTime: 30
   isWarningActive: 0
   blinkTimer: 0
@@ -1695,7 +1693,7 @@ MonoBehaviour:
   blinkSpeed: 0.5
   totalGems: 0
   bestTimes: []
-  currentState: 1
+  currentPuzzle: 1
   carriedStatue: 
   lastGameScene: 
 --- !u!4 &1296163022

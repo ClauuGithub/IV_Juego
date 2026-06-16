@@ -25,11 +25,11 @@ public class KeyFound : MonoBehaviour
 
         // STATE
         // =========================
-        GameStateSingleton.Instance.currentState =
-            GameStateSingleton.GameState.KeyFound;
+        GameStateSingleton.Instance.currentPuzzle =
+            GameStateSingleton.Progress.KeyFound;
 
         Debug.Log("Estado actual: " +
-    GameStateSingleton.Instance.currentState);
+    GameStateSingleton.Instance.currentPuzzle);
 
         //Desactiva el sprite de encima de la llave
         if (overlap != null)

@@ -7,7 +7,7 @@ public class LadderUnlock : MonoBehaviour
     void OnMouseDown()
     {
         // Se ha tenido que abrir el coche primero
-        if (GameStateSingleton.Instance.currentState >= GameStateSingleton.GameState.CarUnlocked)
+        if (GameStateSingleton.Instance.currentPuzzle >= GameStateSingleton.Progress.CarUnlocked)
         {
             SceneManager.LoadScene("PuzzleCodigo");
         }

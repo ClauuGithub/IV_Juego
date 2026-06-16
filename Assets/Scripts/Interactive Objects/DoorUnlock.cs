@@ -7,7 +7,7 @@ public class DoorUnlock : MonoBehaviour
     void OnMouseDown()
     {
         // Se ha tenido que resolver el puzzle antes
-        if (GameStateSingleton.Instance.currentState >= GameStateSingleton.GameState.GodsPuzzleSolved)
+        if (GameStateSingleton.Instance.currentPuzzle >= GameStateSingleton.Progress.GodsPuzzleSolved)
         {
             SceneManager.LoadScene("GameScene3");
         }

@@ -27,7 +27,6 @@ public class SceneLoader : MonoBehaviour
     {
         //GameStateSingleton.Instance.ResetGameState();
         GameStateSingleton.Instance.SetState(new MainMenuState(GameStateSingleton.Instance));
-        SceneManager.LoadScene("MenuScene");
 
     }
 
@@ -42,7 +41,7 @@ public class SceneLoader : MonoBehaviour
         {
             GameStateSingleton.Instance.ResetGameState();
             // Indicamos que el puzle inicial es buscar la llave
-            GameStateSingleton.Instance.currentState = GameState.SearchingKey;
+            GameStateSingleton.Instance.currentPuzzle = Progress.SearchingKey;
             // ACTIVAR EL PATRÓN STATE: El juego se pone en modo "Jugando"
             GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
         }

@@ -7,11 +7,11 @@ public class CarDoor : MonoBehaviour
     private void OnMouseDown()
     {
         // Se ha tenido que encontrar la llave primero
-        if (GameStateSingleton.Instance.currentState >= GameStateSingleton.GameState.KeyFound)
+        if (GameStateSingleton.Instance.currentPuzzle >= GameStateSingleton.Progress.KeyFound)
         {
             MessageManager.Instance.ShowMessage("¡He conseguido arrancar el motor!", 5f );
 
-            GameStateSingleton.Instance.currentState = GameStateSingleton.GameState.CarUnlocked;
+            GameStateSingleton.Instance.currentPuzzle = GameStateSingleton.Progress.CarUnlocked;
         }
         else
         {
