@@ -7,7 +7,7 @@ public class GameOverState : AGameState
 
     public override void Enter()
     {
-        context.gameOver = true;
+        //context.gameOver = true;
         Time.timeScale = 0f;
         SceneManager.LoadScene("GameOverScene"); // Carga tu escena de derrota
 

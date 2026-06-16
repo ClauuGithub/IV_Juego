@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-//Singleton que guarda el estado entre escenas
-//Guarda la llave, el timer, las gemas y el ranking
+//Singleton que guarda la llave, el timer, las gemas y el ranking
+
 public class GameStateSingleton : MonoBehaviour
 {
     // Guarda una unica instancia global para todas las escenas
@@ -15,7 +15,7 @@ public class GameStateSingleton : MonoBehaviour
     // PATRÓN STATE: Guarda el estado  del juego
     private IState currentStateObject;
 
-    public enum GameState
+    public enum Progress
     {
         MainMenu,
         SearchingKey,
@@ -29,18 +29,12 @@ public class GameStateSingleton : MonoBehaviour
     //Almacena las llaves recogidas
     private HashSet<string> keys = new HashSet<string>();
 
-    //Estado coche cerrado/abierto
-    /*public bool carUnlocked = false;
-    //Estado codigo resuelto
-    public bool codeSolved = false;
-    */
-
     // TIMER
     [Header("Timer")]
     public float maxTime = 120f;
     public float currentTime;
-    public bool isPaused;
-    public bool gameOver;
+    /*public bool isPaused;
+    public bool gameOver;*/
 
     [Header("Aviso Timer")]
     public float warningTime = 10f;
@@ -58,14 +52,13 @@ public class GameStateSingleton : MonoBehaviour
 
 
     // El progreso inicia en SearchingKey
-    public GameState currentState = GameState.SearchingKey;
+    public Progress currentPuzzle = Progress.SearchingKey;
 
     [Header("Puzzle Estatuas")]
     public string carriedStatue = "";
     public HashSet<string> collectedStatues = new HashSet<string>();
     public HashSet<string> placedStatues = new HashSet<string>();
 
-    // DENTRO DE GAMESTATESINGLETON.CS (Añades esta línea arriba con tus variables)
     [HideInInspector] public string lastGameScene;
 
     private void Awake()
@@ -91,19 +84,16 @@ public class GameStateSingleton : MonoBehaviour
 
     void Start()
     {
-        // SEGURO DE VIDA: Si la escena actual es la de juego y el estado es null (porque estás testeando),
-        // o si venimos del menú pero queremos forzar el inicio del cronómetro:
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "GameScene" && currentStateObject == null)
         {
             SetState(new PlayingState(this));
         }
     }
 
-    // La lógica de actualización ahora es manejada por el patrón State
+    // La lógica de actualización ahora es manejada por el PATRÓN STATE
     private void Update()
     {
-        // Mantenemos tu Debug.Log para que veas la progresión del puzle en la consola
-        Debug.Log("Puzle actual: " + currentState + " | Estado mecánico: " + currentStateObject?.GetType().Name);
+        Debug.Log("Puzle actual: " + currentPuzzle + " | Estado mecánico: " + currentStateObject?.GetType().Name);
 
         // DELEGACIÓN POLIMÓRFICA PURA
         // Le decimos al estado actual: "Haz lo que te corresponda en este frame".
@@ -114,9 +104,9 @@ public class GameStateSingleton : MonoBehaviour
     public void ResetTimer()
     {
         currentTime = maxTime;
-        isPaused = false;
+        /*isPaused = false;
         gameOver = false;
-        isWarningActive = false;
+        isWarningActive = false;*/
         blinkTimer = 0f;
         Time.timeScale = 1f;
     }
@@ -126,18 +116,6 @@ public class GameStateSingleton : MonoBehaviour
         keys.Add(keyId);
         CogerLlave?.Invoke(1);
     }
-
-    /*public void AddKey(string keyId)
-    {
-        keys.Add(keyId);
-
-        if (keyId == "CarKey")
-        {
-            currentState = GameState.KeyFound;
-        }
-
-        CogerLlave?.Invoke(1);
-    }*/
 
     public bool HasKey(string keyId)
     {
@@ -190,14 +168,12 @@ public class GameStateSingleton : MonoBehaviour
         }
     }
 
-    //Resetear el estado del juego al volver al menu (en el SceneLoader)
+    // Resetear el estado del juego al volver a empezar
     public void ResetGameState()
     {
         keys.Clear();
 
-        currentState = GameState.MainMenu;
-        //carUnlocked = false;
-        //codeSolved = false;
+        currentPuzzle = Progress.MainMenu;
 
         currentStateObject = null;
 
@@ -207,24 +183,10 @@ public class GameStateSingleton : MonoBehaviour
 
         PedirPistas.Instance.ResetPistas();
 
-        isPaused = false;
+        /*isPaused = false;
         gameOver = false;
-        isWarningActive = false;
+        isWarningActive = false;*/
         blinkTimer = 0f;
     }
-
-    /*public void StartGame()
-    {
-
-        Time.timeScale = 1f; 
-        // Aseguramos que todo está limpio
-        keys.Clear();
-        ResetTimer();
-        ResetGems();
-
-        // AHORA SÍ iniciamos la partida
-        currentState = GameState.SearchingKey;
-    }*/
-
 }
 

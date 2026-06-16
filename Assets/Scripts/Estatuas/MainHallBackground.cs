@@ -12,9 +12,9 @@ public class MainHallBackground : MonoBehaviour
 
     private void ActualizarFondo()
     {
-        switch (GameStateSingleton.Instance.currentState)
+        switch (GameStateSingleton.Instance.currentPuzzle)
         {
-            case GameStateSingleton.GameState.GodsPuzzleSolved:
+            case GameStateSingleton.Progress.GodsPuzzleSolved:
 
                 fondoPuertaCerrada.SetActive(false);
                 fondoPuertaAbierta.SetActive(true);

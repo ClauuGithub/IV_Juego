@@ -11,7 +11,7 @@ public class PlayingState : AGameState
     {
         // 1. Devolvemos el tiempo del motor a la normalidad (¡vuelve a la vida!)
         Time.timeScale = 1f;
-        context.isPaused = false;
+       // context.isPaused = false;
 
         // SOLO cargamos la escena si la escena actual NO es ya la escena a la que queremos ir
         if (!string.IsNullOrEmpty(context.lastGameScene) && SceneManager.GetActiveScene().name != context.lastGameScene)

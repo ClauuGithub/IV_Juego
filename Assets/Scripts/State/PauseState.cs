@@ -9,13 +9,13 @@ public class PauseState : AGameState
     {
         context.lastGameScene = SceneManager.GetActiveScene().name;
         Time.timeScale = 0f; // Congela el motor de Unity (animaciones, físicas, etc.)
-        context.isPaused = true;
+        //context.isPaused = true;
         SceneManager.LoadScene("PauseScene");
     }
 
     public override void Exit()
     {
         Time.timeScale = 1f; // Devuelve el juego a la normalidad al salir de la pausa
-        context.isPaused = false;
+       // context.isPaused = false;
     }
 }
