@@ -1,6 +1,7 @@
 using UnityEngine;
 
-// Esta clase abstracta sirve para que todos los estados tengan una referencia directa a tu GameStateSingleton y puedan modificar el tiempo o las variables:
+// Esta clase abstracta sirve para que todos los estados tengan una referencia directa a GameStateSingleton
+// y puedan modificar el tiempo o las variables
 public abstract class AGameState : IState
 {
     protected GameStateSingleton context;

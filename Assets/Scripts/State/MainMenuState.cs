@@ -9,7 +9,6 @@ public class MainMenuState : AGameState
     {
         SceneManager.LoadScene("MenuScene");
 
-        // El estado del menú se encarga de decirle al MusicManager qué tocar
         if (MusicManager.instance != null)
         {
             MusicManager.instance.ChangeMusic(MusicManager.instance.menuMusic);
