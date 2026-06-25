@@ -26,7 +26,7 @@ public class TimerUI : MonoBehaviour
 
         HandleWarningTime(GameStateSingleton.Instance);
 
-        /*if (GameStateSingleton.Instance.gameOver)
+        /*if (GameStateSingleton.Instance.gameOver)     // Esto ahora se delega a State
         {
             sceneLoader.GameOverScene();
         }*/

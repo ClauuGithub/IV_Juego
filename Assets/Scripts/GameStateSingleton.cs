@@ -15,6 +15,7 @@ public class GameStateSingleton : MonoBehaviour
     // PATRÓN STATE: Guarda el estado  del juego
     private IState currentStateObject;
 
+    // El progreso de la partida se va actualizando según la enum
     public enum Progress
     {
         MainMenu,
@@ -33,12 +34,12 @@ public class GameStateSingleton : MonoBehaviour
     [Header("Timer")]
     public float maxTime = 120f;
     public float currentTime;
-    /*public bool isPaused;
+    /*public bool isPaused;          // Ya no son necesarios gracias al State
     public bool gameOver;*/
 
     [Header("Aviso Timer")]
     public float warningTime = 10f;
-    public bool isWarningActive; // si el timer debería parpadear
+    public bool isWarningActive;    // si el timer debería parpadear
     public float blinkTimer;
     public Color warningColor;
     public float blinkSpeed = 0.5f; // velocidad en segundos
@@ -95,16 +96,15 @@ public class GameStateSingleton : MonoBehaviour
     {
         Debug.Log("Puzle actual: " + currentPuzzle + " | Estado mecánico: " + currentStateObject?.GetType().Name);
 
-        // DELEGACIÓN POLIMÓRFICA PURA
-        // Le decimos al estado actual: "Haz lo que te corresponda en este frame".
-        // Si es PlayingState, restará tiempo. Si es PauseState o GameOverState, no hará nada.
+        // DELEGACIÓN POLIMÓRFICA
+        // La lógica se delega en los estados, cada estado indica qué se hace en ese momento
         currentStateObject?.Update();
     }
 
     public void ResetTimer()
     {
         currentTime = maxTime;
-        /*isPaused = false;
+        /*isPaused = false;         // Ya no son necesarios gracias al State
         gameOver = false;
         isWarningActive = false;*/
         blinkTimer = 0f;
@@ -183,7 +183,7 @@ public class GameStateSingleton : MonoBehaviour
 
         PedirPistas.Instance.ResetPistas();
 
-        /*isPaused = false;
+        /*isPaused = false;                 // Ya no son necesarios gracias al State
         gameOver = false;
         isWarningActive = false;*/
         blinkTimer = 0f;

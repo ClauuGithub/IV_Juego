@@ -36,7 +36,7 @@ public class Mensaje : MonoBehaviour
             return;
         }
 
-        sol = new int[] { 1, 2, 3 };  // Estaba en 307
+        sol = new int[] { 1, 2, 3 }; 
 
         ac = 0;
         ap = 0;

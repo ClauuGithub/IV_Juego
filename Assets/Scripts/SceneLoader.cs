@@ -4,16 +4,16 @@ using static GameStateSingleton;
 
 public class SceneLoader : MonoBehaviour
 {
-    // El nombre de la escena se introduce en el editor de Unity
+    // Los métodos se llaman en el editor de Unity
     public void PauseScene()
     {
-        // Mandamos el juego al estado de pausa. El estado se encargará de guardar la escena y cargar la pantalla.
+        // Cambia al estado de pausa
         GameStateSingleton.Instance.SetState(new PauseState(GameStateSingleton.Instance));
     }
 
     public void LoadGameScene()
     {
-        // Cambiamos al estado de cinemática (pone la música de la cinemática)
+        // Cambia al estado de cinemática 
         GameStateSingleton.Instance.SetState(new CutSceneState(GameStateSingleton.Instance));
         SceneManager.LoadScene("CutScene");
     }
@@ -25,7 +25,6 @@ public class SceneLoader : MonoBehaviour
 
     public void MenuScene()
     {
-        //GameStateSingleton.Instance.ResetGameState();
         GameStateSingleton.Instance.SetState(new MainMenuState(GameStateSingleton.Instance));
 
     }
@@ -42,6 +41,7 @@ public class SceneLoader : MonoBehaviour
             GameStateSingleton.Instance.ResetGameState();
             // Indicamos que el puzle inicial es buscar la llave
             GameStateSingleton.Instance.currentPuzzle = Progress.SearchingKey;
+
             // ACTIVAR EL PATRÓN STATE: El juego se pone en modo "Jugando"
             GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
         }
@@ -50,7 +50,7 @@ public class SceneLoader : MonoBehaviour
 
     public void ResumeGame()
     {
-        // Mandamos el juego al estado jugando. El estado recordará a qué escena volver.
+        // Cambia al estado jugando
         GameStateSingleton.Instance.SetState(new PlayingState(GameStateSingleton.Instance));
     }
 
