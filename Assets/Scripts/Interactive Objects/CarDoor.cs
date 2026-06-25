@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Ejemplo claro de PATTERN STATE aplicado
 public class CarDoor : MonoBehaviour
 {
     private void OnMouseDown()

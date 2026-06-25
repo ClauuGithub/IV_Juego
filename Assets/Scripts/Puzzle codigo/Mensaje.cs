@@ -36,7 +36,7 @@ public class Mensaje : MonoBehaviour
             return;
         }
 
-        sol = new int[] { 1, 2, 3 };  // Estaba en 307
+        sol = new int[] { 1, 2, 3 }; 
 
         ac = 0;
         ap = 0;
@@ -85,7 +85,6 @@ public class Mensaje : MonoBehaviour
         if (ac == 3)
         {
             GameStateSingleton.Instance.currentPuzzle = GameStateSingleton.Progress.BalconyUnlocked;
-            Debug.Log("Estado actual: " + GameStateSingleton.Instance.currentPuzzle);
 
             MessageManager.Instance.ShowMessage("¡Perfecto! Ya puedo subir al balcón.", 5f);
             HacerCodigo?.Invoke(2);
