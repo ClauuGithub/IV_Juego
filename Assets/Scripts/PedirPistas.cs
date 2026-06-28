@@ -49,6 +49,7 @@ public class PedirPistas : MonoBehaviour
         {
             Pista = textoObj.GetComponent<TMP_Text>();
             Pista.text = string.IsNullOrEmpty(ayuda) ? pistas[0] : ayuda;
+            Debug.Log(Pista.text);  
         }
     }
     public void darPista(int a) 
@@ -73,7 +74,7 @@ public class PedirPistas : MonoBehaviour
                 MessageManager.Instance.ShowMessage(Pista.text, 5f);
             }
         }
-        else { MessageManager.Instance.ShowMessage("Leñe, el telefono se ha roto", 5f); }
+        else { MessageManager.Instance.ShowMessage("LeÃ±e, el telefono se ha roto", 5f); }
     }
 
     public void ResetPistas()
