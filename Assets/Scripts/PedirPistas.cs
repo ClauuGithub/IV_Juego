@@ -12,6 +12,8 @@ public class PedirPistas : MonoBehaviour
 
     public TMP_Text Pista;
 
+    public int veces = 0;
+
     int f = 0;
     void Awake()
     {
@@ -55,18 +57,25 @@ public class PedirPistas : MonoBehaviour
         changed = true;
     }
 
-    public void MostrarPista() 
+    public void MostrarPista()
     {
-        if (changed == false)
+        veces++;
+
+        if (veces != 4)
         {
-            MessageManager.Instance.ShowMessage(Pista.text, 5f);
-            Pista.text = ayuda;
+            if (changed == false)
+            {
+                MessageManager.Instance.ShowMessage(Pista.text, 5f);
+            }
+            else
+            {
+                Pista.text = ayuda;
+                MessageManager.Instance.ShowMessage(Pista.text, 5f);
+            }
         }
-        else {
-            Pista.text = ayuda;
-            MessageManager.Instance.ShowMessage(Pista.text, 5f);
-        }
+        else { MessageManager.Instance.ShowMessage("Leñe, el telefono se ha roto", 5f); }
     }
+
     public void ResetPistas()
     {
         ayuda = pistas[0]; // Volvemos a la primera pista del juego
