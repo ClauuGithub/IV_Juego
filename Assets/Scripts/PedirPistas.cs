@@ -74,8 +74,9 @@ public class PedirPistas : MonoBehaviour
                 MessageManager.Instance.ShowMessage(Pista.text, 5f);
             }
         }
-        else{ MessageManager.Instance.ShowMessage("Leñe, el telefono se ha roto", 5f); }
+        else { MessageManager.Instance.ShowMessage("LeÃ±e, el telefono se ha roto", 5f); }
     }
+
     public void ResetPistas()
     {
         ayuda = pistas[0]; // Volvemos a la primera pista del juego
